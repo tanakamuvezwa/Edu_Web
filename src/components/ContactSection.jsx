@@ -104,10 +104,11 @@ export default function ContactSection({ onShowToast }) {
                   <Phone className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-500 font-bold uppercase block">Phone Admissions Line</span>
+                  <span className="text-[10px] text-slate-500 font-bold uppercase block">Contact Clemens (Phone & WhatsApp)</span>
                   <a href={`tel:${CONTACT_INFO.phone}`} className="font-bold text-sm text-white hover:text-amber-400 transition">
                     {CONTACT_INFO.phone}
                   </a>
+                  <span className="text-[10px] text-emerald-400 block mt-0.5">Available on WhatsApp & Direct Call</span>
                 </div>
               </div>
 
@@ -116,7 +117,7 @@ export default function ContactSection({ onShowToast }) {
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-500 font-bold uppercase block">Official Email</span>
+                  <span className="text-[10px] text-slate-500 font-bold uppercase block">Direct Email</span>
                   <a href={`mailto:${CONTACT_INFO.email}`} className="font-bold text-sm text-white hover:text-sky-400 transition">
                     {CONTACT_INFO.email}
                   </a>

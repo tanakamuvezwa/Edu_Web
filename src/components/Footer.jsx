@@ -135,6 +135,9 @@ export default function Footer({ onOpenApplyModal }) {
               Contact Us
             </h4>
             <div className="space-y-3 text-slate-400 text-xs">
+              <div className="text-amber-400 font-bold text-xs">
+                Contact: Clemens
+              </div>
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <span>{CONTACT_INFO.officeLocation}</span>
@@ -146,12 +149,12 @@ export default function Footer({ onOpenApplyModal }) {
               <div className="flex items-center gap-2.5">
                 <MessageSquare className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a
-                  href={`https://wa.me/${CONTACT_INFO.whatsappRaw}`}
+                  href={`https://wa.me/${CONTACT_INFO.whatsappRaw}?text=${encodeURIComponent(CONTACT_INFO.whatsappSuggestedMessage)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-emerald-400 transition"
                 >
-                  {CONTACT_INFO.whatsappNumber}
+                  WhatsApp: {CONTACT_INFO.whatsappNumber}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">

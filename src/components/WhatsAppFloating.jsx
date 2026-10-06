@@ -19,10 +19,10 @@ export default function WhatsAppFloating() {
                 <img src="/logo.jpg" alt="Logo" className="w-full h-full object-contain" />
               </div>
               <div>
-                <h4 className="font-heading font-black text-sm text-white">Chat with Future Link</h4>
+                <h4 className="font-heading font-black text-sm text-white">Chat with Clemens (Future Link)</h4>
                 <span className="text-[10px] text-emerald-100 flex items-center gap-1">
                   <span className="w-2 h-2 rounded-full bg-emerald-300 animate-ping" />
-                  <span>Advisors Online • Avg reply: &lt; 5 mins</span>
+                  <span>Advisor Clemens Online • Direct WhatsApp</span>
                 </span>
               </div>
             </div>
@@ -49,12 +49,12 @@ export default function WhatsAppFloating() {
               className="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl transition shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2"
             >
               <MessageSquare className="w-4 h-4 text-slate-950" />
-              <span>Open in WhatsApp</span>
+              <span>Chat with Clemens on WhatsApp</span>
               <Send className="w-3.5 h-3.5 text-slate-950" />
             </a>
 
             <div className="text-[10px] text-slate-400 text-center">
-              Official Admissions Line: {CONTACT_INFO.whatsappNumber}
+              Direct Mobile & WhatsApp: {CONTACT_INFO.whatsappNumber}
             </div>
           </div>
         </div>

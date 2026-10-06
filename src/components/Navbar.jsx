@@ -54,7 +54,7 @@ export default function Navbar({
               className="hover:text-amber-400 flex items-center gap-1.5 transition text-[11px] font-medium"
             >
               <MessageSquare className="w-3 h-3 text-emerald-400" />
-              <span>WhatsApp: {CONTACT_INFO.whatsappNumber}</span>
+              <span>Contact Clemens: {CONTACT_INFO.whatsappNumber}</span>
             </a>
           </div>
         </div>

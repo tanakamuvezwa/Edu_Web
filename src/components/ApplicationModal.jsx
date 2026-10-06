@@ -158,7 +158,7 @@ export default function ApplicationModal({
                   Thank you! Your application has been received.
                 </h3>
                 <p className="text-slate-300 text-sm max-w-lg mx-auto mt-2 leading-relaxed">
-                  A Future Link advisor will contact you shortly to review your admission dossier and program options.
+                  Future Link advisor <strong>Clemens</strong> will contact you shortly to review your admission dossier and program options.
                 </p>
               </div>
 
@@ -170,19 +170,22 @@ export default function ApplicationModal({
                 <span className="text-[11px] text-slate-400 block mt-1">
                   Applicant: <strong>{formData.fullName}</strong>
                 </span>
+                <span className="text-[10px] text-emerald-400 block mt-1">
+                  Assigned Advisor: Clemens ({CONTACT_INFO.phone})
+                </span>
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a
                   href={`https://wa.me/${CONTACT_INFO.whatsappRaw}?text=${encodeURIComponent(
-                    `Hello Future Link, my name is ${formData.fullName} and my application reference is ${appReference}. I applied for ${formData.preferredField} (${formData.studyLevel}).`
+                    `Hello Clemens, my name is ${formData.fullName} and my application reference is ${appReference}. I applied for ${formData.preferredField} (${formData.studyLevel}).`
                   )}`}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition shadow-lg flex items-center justify-center gap-2"
                 >
                   <MessageSquare className="w-4 h-4 text-slate-950" />
-                  <span>Notify Advisor on WhatsApp Now</span>
+                  <span>Notify Clemens on WhatsApp Now</span>
                 </a>
 
                 <button

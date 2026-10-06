@@ -90,6 +90,9 @@ npm run preview    # For production preview (Port 5174)
 
 ### 10. Contact Page (Page 5)
 - **Headline**: *"Let's Start Your Journey"*
-- Details: WhatsApp • Phone • Email • Office Location in Istanbul • Social Media.
+- **Contact Person**: Clemens
+- **Phone & WhatsApp**: `+90 537 058 98 32` (Direct call & WhatsApp active)
+- **Email**: `clemensclaude8@gmail.com`
+- **Office Location**: Gardenia Plaza, Ataşehir Blv., Istanbul, Türkiye
 - **Main Call to Action**: Talk to a Future Link Advisor `[ WhatsApp Us ]`.
-- **Floating WhatsApp Button**: `[ Chat with Future Link ]` with preset: *"Hello Future Link, I'm interested in studying in Turkey. I'd like help choosing a university."*
+- **Floating WhatsApp Button**: `[ Chat with Clemens (Future Link) ]` with preset greeting.

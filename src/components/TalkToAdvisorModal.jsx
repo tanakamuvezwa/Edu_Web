@@ -44,10 +44,10 @@ export default function TalkToAdvisorModal({ isOpen, onClose, onShowToast }) {
           </div>
 
           <h3 className="font-heading font-black text-2xl text-white">
-            Talk to an Advisor
+            Talk to Clemens (Educational Advisor)
           </h3>
           <p className="text-xs text-slate-400 mt-1">
-            Free 1-on-1 personalized educational guidance for international students.
+            Free 1-on-1 personalized educational guidance for studying in Turkey.
           </p>
         </div>
 
@@ -57,10 +57,10 @@ export default function TalkToAdvisorModal({ isOpen, onClose, onShowToast }) {
           {/* Quick 1-Click WhatsApp Option */}
           <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30">
             <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block mb-1">
-              Fastest Option • Instant Response
+              Fastest Option • Instant WhatsApp Response
             </span>
             <h4 className="font-heading font-bold text-base text-white">
-              Connect Directly on WhatsApp
+              Connect Directly with Clemens on WhatsApp
             </h4>
             <p className="text-xs text-slate-300 mt-1">
               "{CONTACT_INFO.whatsappSuggestedMessage}"
@@ -73,14 +73,14 @@ export default function TalkToAdvisorModal({ isOpen, onClose, onShowToast }) {
               className="mt-3 w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
             >
               <MessageSquare className="w-4 h-4 text-slate-950" />
-              <span>Open Chat on WhatsApp Now</span>
+              <span>Chat with Clemens on WhatsApp ({CONTACT_INFO.phone})</span>
               <ArrowRight className="w-4 h-4 text-slate-950" />
             </a>
           </div>
 
           <div className="relative flex py-1 items-center">
             <div className="flex-grow border-t border-white/10"></div>
-            <span className="flex-shrink mx-4 text-slate-500 text-[10px] uppercase font-bold tracking-wider">Or Request a Callback</span>
+            <span className="flex-shrink mx-4 text-slate-500 text-[10px] uppercase font-bold tracking-wider">Or Request a Callback from Clemens</span>
             <div className="flex-grow border-t border-white/10"></div>
           </div>
 
@@ -89,7 +89,7 @@ export default function TalkToAdvisorModal({ isOpen, onClose, onShowToast }) {
               <CheckCircle2 className="w-10 h-10 text-emerald-400 mx-auto" />
               <h4 className="font-bold text-base text-white">Callback Request Confirmed</h4>
               <p className="text-xs text-slate-400">
-                Our educational advisor will message you on WhatsApp at <strong>{studentPhone}</strong>.
+                Clemens will contact you directly on WhatsApp at <strong>{studentPhone}</strong>.
               </p>
               <button
                 onClick={onClose}
