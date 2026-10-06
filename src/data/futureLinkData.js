@@ -404,10 +404,10 @@ export const WHY_FUTURE_LINK_JOURNEY = [
 export const CONTACT_INFO = {
   headline: "Let's Start Your Journey",
   contactPerson: 'Clemens',
-  phone: '+90 537 058 98 32',
-  phoneDisplay: '+90 537 058 98 32',
-  whatsappNumber: '+90 537 058 98 32',
-  whatsappRaw: '905370589832',
+  phone: '+90 537 058 96 32',
+  phoneDisplay: '+90 537 058 96 32',
+  whatsappNumber: '+90 537 058 96 32',
+  whatsappRaw: '905370589632',
   email: 'clemensclaude8@gmail.com',
   officeLocation: 'Gardenia Plaza, Ataşehir Blv., Istanbul, Türkiye',
   whatsappSuggestedMessage: "Hello Clemens, I'm interested in studying in Turkey through Future Link. I'd like help choosing a university."

@@ -91,7 +91,7 @@ npm run preview    # For production preview (Port 5174)
 ### 10. Contact Page (Page 5)
 - **Headline**: *"Let's Start Your Journey"*
 - **Contact Person**: Clemens
-- **Phone & WhatsApp**: `+90 537 058 98 32` (Direct call & WhatsApp active)
+- **Phone & WhatsApp**: `+90 537 058 96 32` (Direct call & WhatsApp active)
 - **Email**: `clemensclaude8@gmail.com`
 - **Office Location**: Gardenia Plaza, Ataşehir Blv., Istanbul, Türkiye
 - **Main Call to Action**: Talk to a Future Link Advisor `[ WhatsApp Us ]`.
