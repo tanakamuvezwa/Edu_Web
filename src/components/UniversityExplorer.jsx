@@ -15,19 +15,17 @@ import {
   ShieldCheck,
   Globe2
 } from 'lucide-react';
-import { UNIVERSITIES, CURRENCIES } from '../data/futureLinkData';
+import { UNIVERSITIES } from '../data/futureLinkData';
 
 export default function UniversityExplorer({ 
   onSelectUniversity, 
   onApplyUniversity, 
-  currentCurrency,
   searchFilter = null
 }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCity, setSelectedCity] = useState('All');
   const [selectedLevel, setSelectedLevel] = useState('All');
 
-  const cur = CURRENCIES[currentCurrency] || CURRENCIES.USD;
   const cities = ['All', 'Istanbul', 'Ankara'];
   const levels = ['All', "Bachelor's", "Master's", "PhD"];
 
@@ -141,7 +139,6 @@ export default function UniversityExplorer({
         {/* Universities Grid */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredUniversities.map((uni) => {
-            const minTuitionConverted = Math.round(uni.minTuitionUsd * cur.rate);
             const isOkan = uni.id === 'okan';
 
             return (
@@ -234,23 +231,22 @@ export default function UniversityExplorer({
                       </div>
                     </div>
 
-                    {/* Tuition & Scholarship Banner */}
+                    {/* Tuition & Scholarship Banner (Contact for more) */}
                     <div className="pt-3 border-t border-white/10 flex items-center justify-between">
                       <div>
-                        <span className="text-[10px] text-slate-400 font-bold uppercase block">Starting Fee</span>
-                        <div className="flex items-baseline gap-1">
-                          <span className="font-heading font-black text-lg text-white">
-                            {cur.symbol}{minTuitionConverted.toLocaleString()}
+                        <span className="text-[10px] text-amber-400/90 font-bold uppercase block">Tuition & Fees</span>
+                        <div className="flex items-baseline gap-1 mt-0.5">
+                          <span className="font-heading font-black text-sm text-white">
+                            Contact for more
                           </span>
-                          <span className="text-[10px] text-slate-400">/ year</span>
                         </div>
                       </div>
 
                       <div className="text-right">
-                        <span className="px-2 py-1 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[11px] font-black block">
-                          {uni.scholarshipRate}
+                        <span className="px-2.5 py-1 rounded-md bg-amber-400/10 text-amber-300 border border-amber-400/30 text-[11px] font-bold block">
+                          Contact for Scholarship
                         </span>
-                        <span className="text-[10px] text-slate-400 block mt-0.5">Direct Future Link Quota</span>
+                        <span className="text-[10px] text-slate-400 block mt-0.5">Partner Quotas Available</span>
                       </div>
                     </div>
 

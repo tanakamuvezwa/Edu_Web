@@ -15,14 +15,14 @@ export default function WhatsAppFloating() {
         <div className="mb-3 w-80 sm:w-96 glass-panel rounded-3xl shadow-2xl border border-emerald-500/40 overflow-hidden animate-slideUp text-white">
           <div className="p-4 bg-gradient-to-r from-emerald-600 to-teal-700 text-white flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/10 p-1 border border-white/20">
-                <img src="/logo.jpg" alt="Logo" className="w-full h-full object-contain" />
+              <div className="w-10 h-10 rounded-xl overflow-hidden bg-white p-0.5 border border-white/20 flex items-center justify-center">
+                <img src="/logo.png" alt="Logo" className="w-full h-full object-contain rounded-lg" />
               </div>
               <div>
-                <h4 className="font-heading font-black text-sm text-white">Chat with Clemens (Future Link)</h4>
+                <h4 className="font-heading font-black text-sm text-white">Contact Us on WhatsApp</h4>
                 <span className="text-[10px] text-emerald-100 flex items-center gap-1">
                   <span className="w-2 h-2 rounded-full bg-emerald-300 animate-ping" />
-                  <span>Advisor Clemens Online • Direct WhatsApp</span>
+                  <span>Admissions Team Online • Direct Chat</span>
                 </span>
               </div>
             </div>
@@ -46,10 +46,10 @@ export default function WhatsAppFloating() {
               href={directUrl}
               target="_blank"
               rel="noreferrer"
-              className="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl transition shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl transition shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 cursor-pointer"
             >
               <MessageSquare className="w-4 h-4 text-slate-950" />
-              <span>Chat with Clemens on WhatsApp</span>
+              <span>Contact Us on : {CONTACT_INFO.phone}</span>
               <Send className="w-3.5 h-3.5 text-slate-950" />
             </a>
 

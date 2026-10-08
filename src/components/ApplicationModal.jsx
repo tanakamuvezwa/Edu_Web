@@ -129,7 +129,7 @@ export default function ApplicationModal({
             Start Your Future Link Application
           </h2>
           <p className="text-slate-400 text-xs mt-1">
-            Official university admissions in Turkey • Zero application fees • 24-48h offer turnaround.
+            Official university admissions in Turkey • 24–48h fast-track offer turnaround.
           </p>
 
           {!submitted && (
@@ -158,7 +158,7 @@ export default function ApplicationModal({
                   Thank you! Your application has been received.
                 </h3>
                 <p className="text-slate-300 text-sm max-w-lg mx-auto mt-2 leading-relaxed">
-                  Future Link advisor <strong>Clemens</strong> will contact you shortly to review your admission dossier and program options.
+                  The Future Link Admissions Team will contact you shortly to review your admission dossier and program options.
                 </p>
               </div>
 
@@ -171,21 +171,21 @@ export default function ApplicationModal({
                   Applicant: <strong>{formData.fullName}</strong>
                 </span>
                 <span className="text-[10px] text-emerald-400 block mt-1">
-                  Assigned Advisor: Clemens ({CONTACT_INFO.phone})
+                  Contact Us on : {CONTACT_INFO.phone}
                 </span>
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a
                   href={`https://wa.me/${CONTACT_INFO.whatsappRaw}?text=${encodeURIComponent(
-                    `Hello Clemens, my name is ${formData.fullName} and my application reference is ${appReference}. I applied for ${formData.preferredField} (${formData.studyLevel}).`
+                    `Hello Future Link, my name is ${formData.fullName} and my application reference is ${appReference}. I applied for ${formData.preferredField} (${formData.studyLevel}).`
                   )}`}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition shadow-lg flex items-center justify-center gap-2"
                 >
                   <MessageSquare className="w-4 h-4 text-slate-950" />
-                  <span>Notify Clemens on WhatsApp Now</span>
+                  <span>Notify Us on WhatsApp Now</span>
                 </a>
 
                 <button

@@ -22,7 +22,6 @@ export default function Footer({ onOpenApplyModal }) {
     { label: 'Study in Turkey', href: '#study-in-turkey' },
     { label: 'Universities', href: '#universities' },
     { label: 'Our Services', href: '#services' },
-    { label: 'How It Works', href: '#how-it-works' },
     { label: 'About Us', href: '#about-us' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -41,7 +40,7 @@ export default function Footer({ onOpenApplyModal }) {
               Ready to take the next step toward your degree?
             </h3>
             <p className="text-slate-300 text-xs sm:text-sm max-w-xl">
-              Start your free application today or talk with our educational advisors on WhatsApp.
+              Start your official application today or talk with our educational advisors on WhatsApp.
             </p>
           </div>
 
@@ -75,8 +74,8 @@ export default function Footer({ onOpenApplyModal }) {
           {/* Column 1: Brand & Logo */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl overflow-hidden bg-white/5 border border-amber-400/30 p-1">
-                <img src="/logo.jpg" alt="Logo" className="w-full h-full object-contain" />
+              <div className="w-12 h-12 rounded-xl overflow-hidden bg-white border border-amber-400/40 p-1 flex items-center justify-center shadow-md">
+                <img src="/logo.png" alt="Logo" className="w-full h-full object-contain rounded-lg" />
               </div>
               <div>
                 <span className="font-heading font-black text-lg text-white tracking-tight block">
@@ -132,11 +131,11 @@ export default function Footer({ onOpenApplyModal }) {
           {/* Column 4: Contact & Office */}
           <div>
             <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
-              Contact Us
+              Contact Us on :
             </h4>
             <div className="space-y-3 text-slate-400 text-xs">
               <div className="text-amber-400 font-bold text-xs">
-                Contact: Clemens
+                Future Link Admissions Desk
               </div>
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />

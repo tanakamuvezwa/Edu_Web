@@ -41,10 +41,10 @@ export default function StatsRibbon() {
       sub: 'Enrolled from 85+ Nations'
     },
     {
-      icon: <Coins className="w-5 h-5 text-rose-500" />,
-      number: '$0.00',
-      label: 'Zero Agency Service Fees',
-      sub: '100% University Funded'
+      icon: <Award className="w-5 h-5 text-amber-500" />,
+      number: '100%',
+      label: 'Official Partner Quotas',
+      sub: 'Direct University Accreditations'
     }
   ];
 

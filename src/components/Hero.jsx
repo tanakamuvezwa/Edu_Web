@@ -96,7 +96,7 @@ export default function Hero({ onOpenApplyModal, onOpenAdvisorModal, onQuickSear
             <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-300">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/5 border border-white/10">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Zero Application Fees</span>
+                <span>Direct Partner Admissions</span>
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/5 border border-white/10">
                 <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />
@@ -130,11 +130,11 @@ export default function Hero({ onOpenApplyModal, onOpenAdvisorModal, onQuickSear
 
                   {/* Centered Futuristic Glass Brand Emblem featuring Official Logo */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                    <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-slate-950/90 backdrop-blur-xl p-3 border-2 border-amber-400/60 shadow-2xl shadow-amber-400/30 flex items-center justify-center animate-float">
+                    <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-white p-2 border-2 border-amber-400/80 shadow-2xl shadow-amber-400/30 flex items-center justify-center animate-float">
                       <img
-                        src="/logo.jpg"
+                        src="/logo.png"
                         alt="Future Link Education Emblem"
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-contain rounded-xl"
                       />
                     </div>
                     

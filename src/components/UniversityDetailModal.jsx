@@ -11,21 +11,21 @@ import {
   Building2, 
   ArrowRight,
   ShieldCheck,
-  Globe2
+  Globe2,
+  MessageSquare
 } from 'lucide-react';
-import { CURRENCIES } from '../data/futureLinkData';
+import { CONTACT_INFO } from '../data/futureLinkData';
 
 export default function UniversityDetailModal({ 
   university, 
   onClose, 
-  onApply, 
-  currentCurrency 
+  onApply
 }) {
   if (!university) return null;
 
-  const cur = CURRENCIES[currentCurrency] || CURRENCIES.USD;
-  const minConverted = Math.round(university.minTuitionUsd * cur.rate);
-  const maxConverted = Math.round(university.maxTuitionUsd * cur.rate);
+  const directWhatsAppUrl = `https://wa.me/${CONTACT_INFO.whatsappRaw}?text=${encodeURIComponent(
+    `Hello Future Link, I would like to inquire about tuition fees, scholarships, and admissions for ${university.name}.`
+  )}`;
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-fadeIn">
@@ -113,17 +113,30 @@ export default function UniversityDetailModal({
 
           {/* 4. Tuition Fees & Deadlines */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-              <span className="text-[10px] text-slate-400 uppercase font-bold block mb-1">Tuition Fees with Scholarship</span>
-              <div className="flex items-baseline gap-1">
-                <span className="font-heading font-black text-xl text-amber-400">
-                  from {cur.symbol}{minConverted.toLocaleString()}
+            <div className="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] text-amber-400 font-bold uppercase block mb-1">Tuition Fees & Scholarships</span>
+                <div className="flex items-baseline gap-1">
+                  <span className="font-heading font-black text-xl text-white">
+                    Contact for more
+                  </span>
+                </div>
+                <span className="text-[11px] text-emerald-400 font-semibold block mt-1">
+                  Institutional scholarship quotas available via Future Link
                 </span>
-                <span className="text-slate-400 text-[11px]">/ academic year</span>
               </div>
-              <span className="text-[11px] text-emerald-400 font-semibold block mt-1">
-                {university.scholarshipRate} applied via Future Link
-              </span>
+
+              <div className="pt-3 mt-3 border-t border-white/10">
+                <a
+                  href={directWhatsAppUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition"
+                >
+                  <MessageSquare className="w-3.5 h-3.5" />
+                  <span>Inquire Fees on WhatsApp →</span>
+                </a>
+              </div>
             </div>
 
             <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
@@ -133,7 +146,7 @@ export default function UniversityDetailModal({
                 <span>{university.deadlines}</span>
               </div>
               <span className="text-[11px] text-slate-400 block mt-1">
-                Fast-track offer letters in 24 hours
+                Fast-track offer letters in 24–48 hours
               </span>
             </div>
           </div>

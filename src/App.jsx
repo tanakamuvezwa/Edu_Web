@@ -4,10 +4,10 @@ import Hero from './components/Hero';
 import StudyInTurkey from './components/StudyInTurkey';
 import UniversityExplorer from './components/UniversityExplorer';
 import ServicesSection from './components/ServicesSection';
-import HowItWorksSection from './components/HowItWorksSection';
 import AboutUsSection from './components/AboutUsSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import WelcomePromptModal from './components/WelcomePromptModal';
 import ApplicationModal from './components/ApplicationModal';
 import UniversityDetailModal from './components/UniversityDetailModal';
 import TalkToAdvisorModal from './components/TalkToAdvisorModal';
@@ -15,7 +15,7 @@ import WhatsAppFloating from './components/WhatsAppFloating';
 import Toast from './components/Toast';
 
 export default function App() {
-  const [currentCurrency, setCurrentCurrency] = useState('USD');
+  const [welcomeModalOpen, setWelcomeModalOpen] = useState(true);
   const [applyModalOpen, setApplyModalOpen] = useState(false);
   const [advisorModalOpen, setAdvisorModalOpen] = useState(false);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
@@ -51,21 +51,11 @@ export default function App() {
     if (elem) elem.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleCurrencyChange = (cur) => {
-    setCurrentCurrency(cur);
-    showToast({
-      type: 'info',
-      message: `Tuition currency set to ${cur}`
-    });
-  };
-
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-amber-400 selection:text-slate-950">
       
-      {/* 1. Futuristic Navbar with Logo & Exact PDF Nav Links */}
+      {/* 1. Futuristic Navbar with Logo & Exact Nav Links */}
       <Navbar
-        currentCurrency={currentCurrency}
-        onCurrencyChange={handleCurrencyChange}
         onOpenApplyModal={() => handleOpenApplyModal()}
         onOpenAdvisorModal={() => setAdvisorModalOpen(true)}
       />
@@ -85,28 +75,22 @@ export default function App() {
           onFindMyUniversity={handleFindMyUniversity}
         />
 
-        {/* 3. Universities: Istanbul Okan University benchmark + partner catalog */}
+        {/* 3. Universities: Catalog featuring Kent, Topkapi, Beykoz, Dogus, Gelisim, Okan, Medipol */}
         <UniversityExplorer
           onSelectUniversity={(uni) => setSelectedUniversity(uni)}
           onApplyUniversity={handleApplyFromExplorer}
-          currentCurrency={currentCurrency}
           searchFilter={searchFilter}
         />
 
-        {/* 5. Visa & Immigration + 6. Student Services: "From Admission to Arrival" */}
+        {/* 4. Visa & Immigration + Student Services: "From Admission to Arrival" */}
         <ServicesSection
           onOpenApplyModal={() => handleOpenApplyModal()}
         />
 
-        {/* 8. Why Future Link? "More Than an Application" (6-Step Journey) */}
-        <HowItWorksSection
-          onOpenApplyModal={() => handleOpenApplyModal()}
-        />
-
-        {/* 7. About Future Link: Who We Are, Mission, Vision, and Values */}
+        {/* 5. About Future Link: Who We Are, Mission, Vision, and Values */}
         <AboutUsSection />
 
-        {/* 9. Contact Page: "Let's Start Your Journey" & [ WhatsApp Us ] */}
+        {/* 6. Contact Page: "Contact Us on :" & [ Chat on WhatsApp Directly ] */}
         <ContactSection
           onShowToast={showToast}
         />
@@ -118,7 +102,14 @@ export default function App() {
         onOpenApplyModal={() => handleOpenApplyModal()}
       />
 
-      {/* 4. Start Your Application Interactive Modal (Exact PDF Page 3 Fields) */}
+      {/* Welcome Prompt Modal (Prompts registration or WhatsApp contact right upon entry) */}
+      <WelcomePromptModal
+        isOpen={welcomeModalOpen}
+        onClose={() => setWelcomeModalOpen(false)}
+        onStartRegistration={() => handleOpenApplyModal()}
+      />
+
+      {/* Start Your Application Interactive Modal */}
       <ApplicationModal
         isOpen={applyModalOpen}
         onClose={() => setApplyModalOpen(false)}
@@ -127,22 +118,21 @@ export default function App() {
         onShowToast={showToast}
       />
 
-      {/* University Detail Dossier Modal (PDF Page 3) */}
+      {/* University Detail Dossier Modal */}
       <UniversityDetailModal
         university={selectedUniversity}
         onClose={() => setSelectedUniversity(null)}
         onApply={(uniName) => handleOpenApplyModal(uniName, '')}
-        currentCurrency={currentCurrency}
       />
 
-      {/* Secondary CTA: Talk to an Advisor Modal (PDF Page 1, 2 & 5) */}
+      {/* Secondary CTA: Talk to an Advisor Modal */}
       <TalkToAdvisorModal
         isOpen={advisorModalOpen}
         onClose={() => setAdvisorModalOpen(false)}
         onShowToast={showToast}
       />
 
-      {/* Floating WhatsApp Button [ Chat with Future Link ] (PDF Page 5) */}
+      {/* Floating WhatsApp Button */}
       <WhatsAppFloating />
 
       {/* Toast Feedback */}
