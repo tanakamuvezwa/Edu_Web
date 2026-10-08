@@ -34,12 +34,8 @@ export default function Navbar({
       <div className="bg-gradient-to-r from-slate-950 via-sky-950/80 to-slate-950 border-b border-white/5 py-1.5 px-4 text-xs">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
-            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
-            <span className="text-amber-400 font-bold tracking-wide text-[11px] uppercase">
-              2026/2027 Admissions Open
-            </span>
-            <span className="text-slate-400 hidden sm:inline text-[11px]">
-              • Simple • Attractive • Professional • Student-Focused
+            <span className="text-slate-400 text-[11px]">
+              Simple • Attractive • Professional • Student-Focused
             </span>
           </div>
 

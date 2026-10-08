@@ -47,7 +47,7 @@ export default function WelcomePromptModal({ isOpen, onClose, onStartRegistratio
             <div>
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 text-[10px] font-black uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                <span>2026/2027 Admissions Open</span>
+                <span>Official Admissions Desk</span>
               </div>
               <h3 className="font-heading font-black text-xl sm:text-2xl text-white mt-1">
                 Study in Turkey
