@@ -502,5 +502,8 @@ export const CONTACT_INFO = {
   whatsappRaw: '905370589632',
   email: 'clemensclaude8@gmail.com',
   officeLocation: 'Gardenia Plaza, Ataşehir Blv., Istanbul, Türkiye',
-  whatsappSuggestedMessage: "Hello Future Link, I am interested in studying in Turkey. Please assist me with admissions and university options."
+  whatsappSuggestedMessage: "Hello Future Link, I am interested in studying in Turkey. Please assist me with admissions and university options.",
+  web3formsKey: '6ac3ba8a-ddf0-4100-91ad-3294ae894b8a'
 };
+
+export const WEB3FORMS_ACCESS_KEY = '6ac3ba8a-ddf0-4100-91ad-3294ae894b8a';

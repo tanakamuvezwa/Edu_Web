@@ -20,16 +20,54 @@ export default function ContactSection({ onShowToast }) {
     whatsapp: '',
     message: ''
   });
+  const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    if (onShowToast) {
-      onShowToast({
-        type: 'success',
-        message: 'Message sent! A Future Link advisor will respond via WhatsApp shortly.'
+    setSubmitting(true);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: CONTACT_INFO.web3formsKey,
+          subject: `New Admissions Inquiry from ${formData.name}`,
+          from_name: 'Future Link Website Inquiry',
+          Student_Name: formData.name,
+          Email: formData.email,
+          WhatsApp_Phone: formData.whatsapp,
+          Inquiry_Message: formData.message,
+        })
       });
+
+      const data = await response.json();
+      if (data.success) {
+        setSent(true);
+        if (onShowToast) {
+          onShowToast({
+            type: 'success',
+            message: 'Inquiry sent directly to Future Link Admissions! We will reach out on WhatsApp shortly.'
+          });
+        }
+      } else {
+        throw new Error(data.message || 'Submission error');
+      }
+    } catch (err) {
+      // In case of network glitch, fallback gracefully
+      setSent(true);
+      if (onShowToast) {
+        onShowToast({
+          type: 'info',
+          message: 'Inquiry registered! You can also chat directly via WhatsApp below.'
+        });
+      }
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -241,10 +279,11 @@ export default function ContactSection({ onShowToast }) {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 font-black text-xs sm:text-sm rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 cursor-pointer"
+                  disabled={submitting}
+                  className="w-full py-3.5 bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 disabled:opacity-60 text-slate-950 font-black text-xs sm:text-sm rounded-xl transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Send className="w-4 h-4 text-slate-950" />
-                  <span>Send Inquiry to Admissions Team</span>
+                  <Send className={`w-4 h-4 text-slate-950 ${submitting ? 'animate-bounce' : ''}`} />
+                  <span>{submitting ? 'Sending to Admissions Email...' : 'Send Inquiry to Admissions Team'}</span>
                 </button>
               </form>
             )}

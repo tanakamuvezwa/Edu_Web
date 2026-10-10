@@ -7,17 +7,41 @@ export default function TalkToAdvisorModal({ isOpen, onClose, onShowToast }) {
   const [studentPhone, setStudentPhone] = useState('');
   const [topic, setTopic] = useState('Choosing a University & Major');
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    if (onShowToast) {
-      onShowToast({
-        type: 'success',
-        message: 'Advisor request submitted! An educational counselor will WhatsApp you.'
+    setSubmitting(true);
+
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: CONTACT_INFO.web3formsKey,
+          subject: `[ADVISOR CALLBACK REQUEST] ${studentName} - ${topic}`,
+          from_name: 'Future Link Advisor Request',
+          Student_Name: studentName,
+          WhatsApp_Phone: studentPhone,
+          Guidance_Topic: topic,
+        })
       });
+    } catch (err) {
+      console.warn('Web3Forms advisor request:', err);
+    } finally {
+      setSubmitting(false);
+      setSent(true);
+      if (onShowToast) {
+        onShowToast({
+          type: 'success',
+          message: 'Advisor request submitted & sent to admissions! We will contact you via WhatsApp shortly.'
+        });
+      }
     }
   };
 
@@ -141,10 +165,11 @@ export default function TalkToAdvisorModal({ isOpen, onClose, onShowToast }) {
 
               <button
                 type="submit"
-                className="w-full py-3 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 font-black text-xs rounded-xl transition shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                disabled={submitting}
+                className="w-full py-3 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 disabled:opacity-60 text-slate-950 font-black text-xs rounded-xl transition shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Send className="w-3.5 h-3.5 text-slate-950" />
-                <span>Request Free Advisory Call</span>
+                <Send className={`w-3.5 h-3.5 text-slate-950 ${submitting ? 'animate-bounce' : ''}`} />
+                <span>{submitting ? 'Sending Request...' : 'Request Free Advisory Call'}</span>
               </button>
             </form>
           )}

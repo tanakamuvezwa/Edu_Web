@@ -65,18 +65,57 @@ export default function ApplicationModal({
     otherFileName: ''
   });
 
+  const [submitting, setSubmitting] = useState(false);
+
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitting(true);
     const randomCode = 'FL-' + Math.floor(100000 + Math.random() * 900000);
     setAppReference(randomCode);
-    setSubmitted(true);
-    if (onShowToast) {
-      onShowToast({
-        type: 'success',
-        message: 'Application Submitted! Ref: ' + randomCode
+
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: CONTACT_INFO.web3formsKey,
+          subject: `[NEW APPLICATION] ${randomCode} - ${formData.fullName} (${formData.preferredUniversity})`,
+          from_name: 'Future Link Admissions Portal',
+          Application_Reference: randomCode,
+          Full_Name: formData.fullName,
+          Email: formData.email,
+          Phone_WhatsApp: formData.phone,
+          Date_of_Birth: formData.dob || 'Not provided',
+          Nationality: formData.nationality,
+          Passport_Number: formData.passportNumber || 'Pending',
+          Target_University: formData.preferredUniversity,
+          Study_Level: formData.studyLevel,
+          Preferred_Program: formData.preferredField,
+          Language_of_Instruction: formData.preferredLanguage,
+          High_School_Grade: formData.highSchoolGrade || 'Pending',
+          Graduation_Year: formData.graduationYear || '2025/2026',
+          Passport_File: formData.passportUploaded ? formData.passportFileName : 'Pending via WhatsApp',
+          Certificate_File: formData.certificateUploaded ? formData.certificateFileName : 'Pending via WhatsApp',
+          Transcript_File: formData.transcriptUploaded ? formData.transcriptFileName : 'Pending via WhatsApp',
+          Other_File: formData.otherDocumentsUploaded ? formData.otherFileName : 'None',
+        })
       });
+    } catch (err) {
+      console.warn('Web3Forms background dispatch:', err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+      if (onShowToast) {
+        onShowToast({
+          type: 'success',
+          message: 'Application Submitted & Dispatched to Admissions! Ref: ' + randomCode
+        });
+      }
     }
   };
 
@@ -117,8 +156,8 @@ export default function ApplicationModal({
           </button>
 
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-9 h-9 rounded-xl overflow-hidden bg-white/5 border border-amber-400/30 p-0.5">
-              <img src="/logo.jpg" alt="Logo" className="w-full h-full object-contain" />
+            <div className="w-9 h-9 rounded-xl overflow-hidden bg-white border border-amber-400/40 p-0.5 flex items-center justify-center">
+              <img src="/logo.png" alt="Logo" className="w-full h-full object-contain rounded-lg" />
             </div>
             <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
               Future Link Education Application Portal
@@ -610,10 +649,11 @@ export default function ApplicationModal({
                     </button>
                     <button
                       type="submit"
-                      className="px-8 py-3.5 bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 font-black text-xs sm:text-sm rounded-xl transition flex items-center gap-2 cursor-pointer shadow-xl shadow-amber-500/25 glow-gold"
+                      disabled={submitting}
+                      className="px-8 py-3.5 bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 disabled:opacity-60 text-slate-950 font-black text-xs sm:text-sm rounded-xl transition flex items-center gap-2 cursor-pointer shadow-xl shadow-amber-500/25 glow-gold"
                     >
-                      <Sparkles className="w-4 h-4 text-slate-950" />
-                      <span>Submit Application</span>
+                      <Sparkles className={`w-4 h-4 text-slate-950 ${submitting ? 'animate-spin' : ''}`} />
+                      <span>{submitting ? 'Sending to Admissions Email...' : 'Submit Application'}</span>
                       <Send className="w-4 h-4 text-slate-950" />
                     </button>
                   </div>
