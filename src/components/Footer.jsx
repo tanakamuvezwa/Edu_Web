@@ -1,9 +1,10 @@
-import React from 'react';
+﻿import React from 'react';
 import { 
   GraduationCap, 
   MapPin, 
   Phone, 
   Mail, 
+  MessageSquare, 
   ShieldCheck, 
   Sparkles, 
   ArrowUp,
@@ -84,9 +85,7 @@ export default function Footer({ onOpenApplyModal }) {
                 <span className="text-[10px] text-amber-400 font-bold uppercase tracking-widest block">
                   EDUCATION
                 </span>
-                <span className="text-[11px] text-amber-300 font-serif tracking-wider italic block mt-0.5">
-                  Your Future, Our Link
-                </span>
+                <span className="text-[10px] text-amber-300 font-serif italic tracking-wide block mt-0.5">Your Future, Our Link</span>
               </div>
             </div>
 
@@ -133,9 +132,8 @@ export default function Footer({ onOpenApplyModal }) {
 
           {/* Column 4: Contact & Office */}
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4 flex items-center gap-1.5">
-              <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Contact to:</span>
+            <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
+              Contact Us on :
             </h4>
             <div className="space-y-3 text-slate-400 text-xs">
               <div className="text-amber-400 font-bold text-xs">
@@ -149,16 +147,15 @@ export default function Footer({ onOpenApplyModal }) {
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />
                 <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-white transition">{CONTACT_INFO.phone}</a>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-slate-400">Contact to:</span>
+              <div className="flex items-center gap-2.5">
+                <MessageSquare className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a
                   href={`https://wa.me/${CONTACT_INFO.whatsappRaw}?text=${encodeURIComponent(CONTACT_INFO.whatsappSuggestedMessage)}`}
                   target="_blank"
                   rel="noreferrer"
-                  title="Open WhatsApp (+90 537 058 96 32)"
-                  className="p-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition hover:scale-110 shadow-md inline-flex items-center justify-center cursor-pointer"
+                  className="hover:text-emerald-400 transition"
                 >
-                  <WhatsAppIcon className="w-3.5 h-3.5 text-slate-950" />
+                  WhatsApp: {CONTACT_INFO.whatsappNumber}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">

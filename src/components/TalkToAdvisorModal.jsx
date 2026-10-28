@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { X, Phone, Mail, ArrowRight, CheckCircle2, Sparkles, Send } from 'lucide-react';
+﻿import React, { useState } from 'react';
+import { X, MessageSquare, Phone, Mail, ArrowRight, CheckCircle2, Sparkles, Send } from 'lucide-react';
 import { CONTACT_INFO } from '../data/futureLinkData';
 import WhatsAppIcon from './WhatsAppIcon';
 
@@ -95,13 +95,11 @@ export default function TalkToAdvisorModal({ isOpen, onClose, onShowToast }) {
               href={directWhatsAppUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-3 w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl transition flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-500/20 group cursor-pointer"
+              className="mt-3 w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
             >
-              <span>Contact to:</span>
-              <span className="p-1 rounded-full bg-white text-emerald-600 flex items-center justify-center shadow-sm">
-                <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-600" />
-              </span>
-              <ArrowRight className="w-4 h-4 text-slate-950 group-hover:translate-x-1 transition ml-1" />
+              <MessageSquare className="w-4 h-4 text-slate-950" />
+              <span>Contact Us on WhatsApp ({CONTACT_INFO.phone})</span>
+              <ArrowRight className="w-4 h-4 text-slate-950" />
             </a>
           </div>
 

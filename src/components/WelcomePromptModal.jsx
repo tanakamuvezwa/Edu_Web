@@ -1,7 +1,8 @@
-import React from 'react';
+﻿import React from 'react';
 import { 
   Sparkles, 
   X, 
+  MessageSquare, 
   ArrowRight, 
   GraduationCap, 
   PhoneCall, 
@@ -52,9 +53,6 @@ export default function WelcomePromptModal({ isOpen, onClose, onStartRegistratio
               <h3 className="font-heading font-black text-xl sm:text-2xl text-white mt-1">
                 Study in Turkey
               </h3>
-              <span className="text-[11px] text-amber-300 font-serif italic tracking-wide block mt-0.5">
-                Your Future, Our Link
-              </span>
             </div>
           </div>
         </div>
@@ -110,24 +108,17 @@ export default function WelcomePromptModal({ isOpen, onClose, onStartRegistratio
             rel="noreferrer"
             className="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm rounded-2xl shadow-lg shadow-emerald-500/20 transition flex items-center justify-center gap-2.5"
           >
-            <WhatsAppIcon className="w-4 h-4 text-slate-950" />
-            <span>Chat with us on WhatsApp</span>
+            <MessageSquare className="w-4 h-4 text-slate-950" />
+            <span>Contact Us Today on WhatsApp</span>
             <ArrowRight className="w-4 h-4 text-slate-950" />
           </a>
 
           {/* Contact Details Footnote */}
           <div className="pt-2 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2">
-            <div className="flex items-center gap-2">
-              <span className="text-slate-400">Contact to:</span>
-              <a 
-                href={directWhatsAppUrl} 
-                target="_blank" 
-                rel="noreferrer" 
-                title="Open WhatsApp (+90 537 058 96 32)"
-                className="p-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition hover:scale-110 shadow-md inline-flex items-center justify-center cursor-pointer"
-                aria-label="Contact on WhatsApp"
-              >
-                <WhatsAppIcon className="w-4 h-4 text-slate-950" />
+            <div>
+              <span className="text-slate-400">Contact to: </span>
+              <a href={`tel:${CONTACT_INFO.phone}`} className="text-amber-400 font-bold hover:underline">
+                {CONTACT_INFO.phone}
               </a>
             </div>
 

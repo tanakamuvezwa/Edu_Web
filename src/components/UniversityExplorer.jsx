@@ -160,33 +160,22 @@ export default function UniversityExplorer({
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
 
                     {/* Badge */}
-                    <div className="absolute top-3 left-3 flex items-center gap-1.5 flex-wrap max-w-[60%]">
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5">
                       <span className="px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-amber-300 border border-amber-400/30">
                         {uni.ranking}
                       </span>
                       {isOkan && (
                         <span className="px-2.5 py-1 rounded-full bg-amber-400 text-slate-950 text-[11px] font-extrabold shadow-md">
-                          ★ Benchmark
+                          ★ PDF Benchmark Model
                         </span>
                       )}
                     </div>
 
-                    {/* Official University Logo Badge */}
-                    {uni.logoUrl ? (
-                      <div className="absolute top-3 right-3 h-10 px-3 bg-white/95 backdrop-blur-md rounded-xl border border-white/50 shadow-xl flex items-center justify-center z-10 group-hover:scale-105 transition-transform duration-300">
-                        <img
-                          src={uni.logoUrl}
-                          alt={`${uni.name} Official Logo`}
-                          className="h-7 w-auto max-w-[120px] object-contain"
-                        />
-                      </div>
-                    ) : (
-                      <div className="absolute top-3 right-3">
-                        <span className="px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-semibold text-slate-300 border border-white/15">
-                          {uni.primaryLanguages.join(' & ')}
-                        </span>
-                      </div>
-                    )}
+                    <div className="absolute top-3 right-3">
+                      <span className="px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-semibold text-slate-300 border border-white/15">
+                        {uni.primaryLanguages.join(' & ')}
+                      </span>
+                    </div>
 
                     <div className="absolute bottom-3 left-3 right-3">
                       <span className="text-[11px] text-amber-400 font-bold uppercase tracking-wider flex items-center gap-1">

@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { 
   Phone, 
   Mail, 
   MapPin, 
+  MessageSquare, 
   ArrowRight, 
   Send, 
   CheckCircle2, 
   Clock,
   Sparkles,
-  Share2,
-  MessageSquare
+  Share2
 } from 'lucide-react';
 import { CONTACT_INFO } from '../data/futureLinkData';
 import WhatsAppIcon from './WhatsAppIcon';
@@ -124,23 +124,14 @@ export default function ContactSection({ onShowToast }) {
                   rel="noreferrer"
                   className="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm rounded-2xl transition shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2.5 cursor-pointer"
                 >
-                  <WhatsAppIcon className="w-5 h-5 text-slate-950" />
-                  <span>Chat with us on WhatsApp</span>
+                  <MessageSquare className="w-5 h-5 text-slate-950" />
+                  <span>Chat on WhatsApp Directly</span>
                   <ArrowRight className="w-4 h-4 text-slate-950" />
                 </a>
               </div>
 
-              <span className="text-[11px] text-slate-400 flex items-center justify-center gap-1.5 mt-2.5">
-                <span>Instant Chat: Contact to</span>
-                <a
-                  href={whatsappDirectUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  title="Direct WhatsApp"
-                  className="p-1 rounded-full bg-emerald-500 text-slate-950 hover:bg-emerald-400 transition inline-flex items-center justify-center shadow"
-                >
-                  <WhatsAppIcon className="w-3 h-3 text-slate-950" />
-                </a>
+              <span className="text-[11px] text-slate-400 block text-center mt-2.5">
+                Instant Chat: Connect directly to +90 537 058 96 32
               </span>
             </div>
 
@@ -148,33 +139,26 @@ export default function ContactSection({ onShowToast }) {
             <div className="glass-panel rounded-3xl p-6 border border-white/10 space-y-4 text-xs">
               
               <div className="flex items-start gap-3.5 text-slate-300">
-                <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-emerald-400">
-                  <WhatsAppIcon className="w-4 h-4" />
+                <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-amber-400">
+                  <Phone className="w-4 h-4" />
                 </div>
                 <div className="flex-1">
-                  <span className="text-[10px] text-amber-400 font-bold uppercase block mb-1">Contact to:</span>
-                  <div className="flex items-center gap-3 mt-1">
-                    <a 
-                      href={whatsappDirectUrl} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      title="Open WhatsApp (+90 537 058 96 32)"
-                      className="px-3.5 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs rounded-xl transition shadow-lg inline-flex items-center gap-2 group hover:scale-105"
-                    >
-                      <WhatsAppIcon className="w-4 h-4 text-slate-950" />
-                      <span>WhatsApp</span>
+                  <span className="text-[10px] text-amber-400 font-bold uppercase block">Contact to:</span>
+                  <div className="flex items-center justify-between flex-wrap gap-2 mt-0.5">
+                    <a href={`tel:${CONTACT_INFO.phone}`} className="font-bold text-sm text-white hover:text-amber-400 transition">
+                      {CONTACT_INFO.phone}
                     </a>
                     <a
                       href={whatsappDirectUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="px-3.5 py-2 bg-emerald-500/20 hover:bg-emerald-500 text-emerald-300 hover:text-slate-950 border border-emerald-500/30 font-bold text-xs rounded-xl transition inline-flex items-center gap-1.5"
+                      className="px-2.5 py-1 bg-emerald-500/20 hover:bg-emerald-500 text-emerald-300 hover:text-slate-950 border border-emerald-500/30 font-bold text-[11px] rounded-lg transition inline-flex items-center gap-1"
                     >
-                      <WhatsAppIcon className="w-3.5 h-3.5" />
-                      <span>Chat with us</span>
+                      <MessageSquare className="w-3 h-3" />
+                      <span>WhatsApp Chat</span>
                     </a>
                   </div>
-                  <span className="text-[10px] text-emerald-400 block mt-1.5">Direct WhatsApp Link • Instant Admissions Response</span>
+                  <span className="text-[10px] text-emerald-400 block mt-1">Available on WhatsApp & Direct Call</span>
                 </div>
               </div>
 

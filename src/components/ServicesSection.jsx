@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { 
   ShieldCheck, 
   FileText, 
@@ -91,7 +91,7 @@ export default function ServicesSection({ onOpenApplyModal }) {
             <div className="mb-6 flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
-                  1. Visa & Immigration
+                  Visa & Immigration
                 </span>
                 <h3 className="font-heading font-black text-2xl text-white mt-0.5">
                   From Admission to Arrival — We’re With You
@@ -136,7 +136,7 @@ export default function ServicesSection({ onOpenApplyModal }) {
             <div className="mb-6 flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-sky-400 uppercase tracking-wider block">
-                  2. Student Settlement Services
+                  Student Services
                 </span>
                 <h3 className="font-heading font-black text-2xl text-white mt-0.5">
                   Everything You Need Before You Arrive

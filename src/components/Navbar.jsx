@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { 
   Sparkles, 
   Menu, 
   X, 
   PhoneCall, 
-  ArrowRight
+  ArrowRight,
+  MessageSquare
 } from 'lucide-react';
 import { CONTACT_INFO } from '../data/futureLinkData';
 import WhatsAppIcon from './WhatsAppIcon';
@@ -40,18 +41,10 @@ export default function Navbar({
           </div>
 
           <div className="flex items-center gap-4 text-slate-300 text-[11px]">
-            <a
-              href={whatsappDirectUrl}
-              target="_blank"
-              rel="noreferrer"
-              title="Open WhatsApp (+90 537 058 96 32)"
-              className="hover:text-white flex items-center gap-2 transition text-[11px] font-semibold text-slate-300 group"
-            >
-              <span className="text-slate-400">Contact to:</span>
-              <span className="p-1 rounded-full bg-emerald-500 group-hover:bg-emerald-400 text-slate-950 flex items-center justify-center transition shadow-md group-hover:scale-110">
-                <WhatsAppIcon className="w-3.5 h-3.5 text-slate-950" />
-              </span>
-            </a>
+            <span className="flex items-center gap-1.5 text-[11px] font-semibold">
+              <span className="text-slate-300">Contact to:</span>
+              <a href={whatsappDirectUrl} target="_blank" rel="noreferrer" className="p-1 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition hover:scale-110 shadow inline-flex items-center justify-center cursor-pointer"><WhatsAppIcon className="w-3.5 h-3.5 text-slate-950" /></a>
+            </span>
           </div>
         </div>
       </div>
@@ -80,8 +73,8 @@ export default function Navbar({
                   EDUCATION
                 </span>
               </span>
-              <span className="text-[11px] text-amber-300 font-serif tracking-wider italic font-semibold mt-1">
-                Your Future, Our Link
+              <span className="text-[10px] text-slate-400 font-semibold tracking-wide mt-1">
+                Build Your Future in Turkey 🇹🇷
               </span>
             </div>
           </a>

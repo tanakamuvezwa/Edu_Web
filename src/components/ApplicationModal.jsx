@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { 
   X, 
   Sparkles, 
@@ -10,10 +10,10 @@ import {
   Mail, 
   User, 
   Globe2, 
-  Calendar, 
-  FileText, 
-  Send, 
-  MessageSquare 
+  Calendar,
+  FileText,
+  Send,
+  MessageSquare
 } from 'lucide-react';
 import { UNIVERSITIES, CONTACT_INFO } from '../data/futureLinkData';
 import WhatsAppIcon from './WhatsAppIcon';
@@ -157,17 +157,12 @@ export default function ApplicationModal({
           </button>
 
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-xl overflow-hidden bg-white border border-amber-400/40 p-0.5 flex items-center justify-center shadow-md">
+            <div className="w-9 h-9 rounded-xl overflow-hidden bg-white border border-amber-400/40 p-0.5 flex items-center justify-center">
               <img src="/logo.png" alt="Logo" className="w-full h-full object-contain rounded-lg" />
             </div>
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-amber-400 block">
-                Future Link Education Application Portal
-              </span>
-              <span className="text-[10px] text-amber-300 font-serif italic tracking-wide block">
-                Your Future, Our Link
-              </span>
-            </div>
+            <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
+              Future Link Education Application Portal
+            </span>
           </div>
 
           <h2 className="font-heading font-black text-2xl sm:text-3xl text-white">
@@ -215,20 +210,9 @@ export default function ApplicationModal({
                 <span className="text-[11px] text-slate-400 block mt-1">
                   Applicant: <strong>{formData.fullName}</strong>
                 </span>
-                <div className="flex items-center justify-center gap-2 mt-2 pt-2 border-t border-white/5">
-                  <span className="text-[11px] text-slate-400">Contact to:</span>
-                  <a
-                    href={`https://wa.me/${CONTACT_INFO.whatsappRaw}?text=${encodeURIComponent(
-                      `Hello Future Link, my name is ${formData.fullName} and my application reference is ${appReference}.`
-                    )}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    title="Open WhatsApp (+90 537 058 96 32)"
-                    className="p-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition hover:scale-110 shadow-md inline-flex items-center justify-center cursor-pointer"
-                  >
-                    <WhatsAppIcon className="w-3.5 h-3.5 text-slate-950" />
-                  </a>
-                </div>
+                <span className="text-[10px] text-emerald-400 block mt-1">
+                  Contact Us on : {CONTACT_INFO.phone}
+                </span>
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
