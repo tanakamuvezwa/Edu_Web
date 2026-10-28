@@ -8,7 +8,8 @@ import {
   CheckCircle2, 
   Clock,
   Sparkles,
-  Share2
+  Share2,
+  MessageSquare
 } from 'lucide-react';
 import { CONTACT_INFO } from '../data/futureLinkData';
 import WhatsAppIcon from './WhatsAppIcon';
