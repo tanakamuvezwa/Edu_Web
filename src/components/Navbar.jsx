@@ -4,10 +4,10 @@ import {
   Menu, 
   X, 
   PhoneCall, 
-  ArrowRight,
-  MessageSquare
+  ArrowRight
 } from 'lucide-react';
 import { CONTACT_INFO } from '../data/futureLinkData';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Navbar({ 
   onOpenApplyModal, 
@@ -44,10 +44,13 @@ export default function Navbar({
               href={whatsappDirectUrl}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-amber-400 flex items-center gap-1.5 transition text-[11px] font-semibold"
+              title="Open WhatsApp (+90 537 058 96 32)"
+              className="hover:text-white flex items-center gap-2 transition text-[11px] font-semibold text-slate-300 group"
             >
-              <MessageSquare className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-              <span>Contact Us on : {CONTACT_INFO.phone}</span>
+              <span className="text-slate-400">Contact to:</span>
+              <span className="p-1 rounded-full bg-emerald-500 group-hover:bg-emerald-400 text-slate-950 flex items-center justify-center transition shadow-md group-hover:scale-110">
+                <WhatsAppIcon className="w-3.5 h-3.5 text-slate-950" />
+              </span>
             </a>
           </div>
         </div>
@@ -77,8 +80,8 @@ export default function Navbar({
                   EDUCATION
                 </span>
               </span>
-              <span className="text-[10px] text-slate-400 font-semibold tracking-wide mt-1">
-                Build Your Future in Turkey 🇹🇷
+              <span className="text-[11px] text-amber-300 font-serif tracking-wider italic font-semibold mt-1">
+                Your Future, Our Link
               </span>
             </div>
           </a>

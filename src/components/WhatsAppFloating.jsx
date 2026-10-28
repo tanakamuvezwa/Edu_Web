@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { MessageSquare, X, Send, Sparkles, PhoneCall } from 'lucide-react';
+import { X, Send } from 'lucide-react';
 import { CONTACT_INFO } from '../data/futureLinkData';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function WhatsAppFloating() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,10 @@ export default function WhatsAppFloating() {
                 <img src="/logo.png" alt="Logo" className="w-full h-full object-contain rounded-lg" />
               </div>
               <div>
-                <h4 className="font-heading font-black text-sm text-white">Contact Us on WhatsApp</h4>
+                <h4 className="font-heading font-black text-sm text-white flex items-center gap-1.5">
+                  <WhatsAppIcon className="w-4 h-4 text-emerald-200" />
+                  <span>Contact to: WhatsApp</span>
+                </h4>
                 <span className="text-[10px] text-emerald-100 flex items-center gap-1">
                   <span className="w-2 h-2 rounded-full bg-emerald-300 animate-ping" />
                   <span>Admissions Team Online • Direct Chat</span>
@@ -48,19 +52,27 @@ export default function WhatsAppFloating() {
               rel="noreferrer"
               className="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl transition shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 cursor-pointer"
             >
-              <MessageSquare className="w-4 h-4 text-slate-950" />
-              <span>Contact Us on : {CONTACT_INFO.phone}</span>
+              <WhatsAppIcon className="w-4 h-4 text-slate-950" />
+              <span>Contact to: WhatsApp</span>
               <Send className="w-3.5 h-3.5 text-slate-950" />
             </a>
 
-            <div className="text-[10px] text-slate-400 text-center">
-              Direct Mobile & WhatsApp: {CONTACT_INFO.whatsappNumber}
+            <div className="text-[10px] text-slate-400 text-center flex items-center justify-center gap-1.5">
+              <span>Direct WhatsApp:</span>
+              <a
+                href={directUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="p-1 rounded-full bg-emerald-500 text-slate-950 inline-flex items-center justify-center shadow hover:bg-emerald-400 transition"
+              >
+                <WhatsAppIcon className="w-3.5 h-3.5 text-slate-950" />
+              </a>
             </div>
           </div>
         </div>
       )}
 
-      {/* Floating Button (Exact label from PDF Page 5: [ Chat with Future Link ]) */}
+      {/* Floating Button */}
       <div className="flex items-center gap-2">
         <a
           href={directUrl}
@@ -72,8 +84,8 @@ export default function WhatsAppFloating() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-75" />
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-slate-950" />
           </span>
-          <span>Chat with Future Link</span>
-          <MessageSquare className="w-4 h-4 text-slate-950" />
+          <WhatsAppIcon className="w-4 h-4 text-slate-950" />
+          <span>Chat with us</span>
         </a>
 
         {/* Mobile circular trigger */}
@@ -82,7 +94,7 @@ export default function WhatsAppFloating() {
           className="sm:hidden w-14 h-14 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center shadow-xl cursor-pointer"
           aria-label="Open chat"
         >
-          <MessageSquare className="w-6 h-6" />
+          <WhatsAppIcon className="w-6 h-6 text-slate-950" />
         </button>
       </div>
 

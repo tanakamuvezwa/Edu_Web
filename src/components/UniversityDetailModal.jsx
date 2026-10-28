@@ -47,26 +47,38 @@ export default function UniversityDetailModal({
             <X className="w-5 h-5" />
           </button>
 
-          <div className="absolute bottom-5 left-6 right-6">
-            <div className="flex flex-wrap items-center gap-2 mb-2">
-              <span className="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 text-[11px] font-black">
-                {university.ranking}
-              </span>
-              <span className="px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-white text-[11px] font-semibold">
-                {university.city}, Türkiye 🇹🇷
-              </span>
-              <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[11px] font-bold">
-                {university.scholarshipRate}
+          <div className="absolute bottom-5 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <span className="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 text-[11px] font-black">
+                  {university.ranking}
+                </span>
+                <span className="px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-white text-[11px] font-semibold">
+                  {university.city}, Türkiye 🇹🇷
+                </span>
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[11px] font-bold">
+                  {university.scholarshipRate}
+                </span>
+              </div>
+
+              <h2 className="font-heading font-black text-2xl sm:text-3xl text-white">
+                {university.name}
+              </h2>
+              <span className="text-xs text-slate-300 flex items-center gap-1.5 mt-1">
+                <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                <span>Campus: {university.locationType}</span>
               </span>
             </div>
 
-            <h2 className="font-heading font-black text-2xl sm:text-3xl text-white">
-              {university.name}
-            </h2>
-            <span className="text-xs text-slate-300 flex items-center gap-1.5 mt-1">
-              <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-              <span>Campus: {university.locationType}</span>
-            </span>
+            {university.logoUrl && (
+              <div className="h-12 px-3 py-1.5 bg-white/95 backdrop-blur-md rounded-2xl border border-white/50 shadow-2xl flex items-center justify-center shrink-0">
+                <img
+                  src={university.logoUrl}
+                  alt={`${university.name} Official Logo`}
+                  className="h-8 w-auto max-w-[140px] object-contain"
+                />
+              </div>
+            )}
           </div>
         </div>
 

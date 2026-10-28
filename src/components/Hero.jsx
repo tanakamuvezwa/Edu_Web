@@ -141,7 +141,11 @@ export default function Hero({ onOpenApplyModal, onOpenAdvisorModal, onQuickSear
                     <div className="mt-3 px-4 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-xs font-bold text-white shadow-lg">
                       <span className="text-amber-400 font-extrabold">FUTURE LINK</span> EDUCATION
                     </div>
-                    <span className="text-[11px] text-slate-300 mt-1">Official University Representation</span>
+                    <div className="flex items-center gap-1.5 mt-1.5 text-[11px] text-amber-300 font-serif tracking-wider italic">
+                      <span className="h-[1px] w-3 bg-amber-400/60 inline-block"></span>
+                      <span>Your Future, Our Link</span>
+                      <span className="h-[1px] w-3 bg-amber-400/60 inline-block"></span>
+                    </div>
                   </div>
 
                   {/* Floating Badges */}

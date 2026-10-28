@@ -103,7 +103,8 @@ export const UNIVERSITIES = [
     featured: true,
     badge: '★ Featured Benchmark in PDF',
     popularPrograms: ['Medicine (English & Turkish)', 'Dentistry (DDS)', 'Flight Training (Pilotage)', 'Software Engineering', 'Business Administration', 'Architecture'],
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1000&q=80',
+    logoUrl: '/universities/okan.png'
   },
   {
     id: 'kent',
@@ -128,7 +129,8 @@ export const UNIVERSITIES = [
     featured: true,
     badge: 'Top for Dentistry & Health in Taksim',
     popularPrograms: ['Dentistry (DDS - English & Turkish)', 'Psychology (English)', 'Physiotherapy & Rehabilitation', 'Gastronomy & Culinary Arts', 'Political Science & IR', 'Software Engineering'],
-    imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=80',
+    logoUrl: '/universities/kent.png'
   },
   {
     id: 'topkapi',
@@ -153,7 +155,8 @@ export const UNIVERSITIES = [
     featured: true,
     badge: 'Leader in Tech, Design & Media',
     popularPrograms: ['Software Engineering', 'Computer Engineering', 'Architecture', 'Interior Architecture', 'International Trade & Business', 'Gastronomy'],
-    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80',
+    logoUrl: '/universities/topkapi.png'
   },
   {
     id: 'beykoz',
@@ -178,7 +181,8 @@ export const UNIVERSITIES = [
     featured: true,
     badge: 'Premier Aviation & Logistics Hub',
     popularPrograms: ['Civil Aviation Management', 'Software Engineering (English)', 'Computer Engineering', 'International Logistics & Transport', 'Digital Game Design', 'Interior Architecture'],
-    imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1000&q=80',
+    logoUrl: '/universities/beykoz.png'
   },
   {
     id: 'dogus',
@@ -203,7 +207,8 @@ export const UNIVERSITIES = [
     featured: true,
     badge: '27+ Years of Academic Distinction',
     popularPrograms: ['Computer Engineering (English)', 'Industrial Engineering', 'Mechanical Engineering', 'International Relations (English)', 'Psychology (English)', 'Law'],
-    imageUrl: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=80',
+    logoUrl: '/universities/dogus.png'
   },
   {
     id: 'gelisim',
@@ -228,7 +233,8 @@ export const UNIVERSITIES = [
     featured: true,
     badge: '#1 in Turkey for Global Accreditations',
     popularPrograms: ['Aeronautical Engineering', 'Aircraft Maintenance & Pilotage', 'Dentistry (DDS)', 'Civil Engineering', 'Software Engineering', 'Gastronomy & Culinary Arts'],
-    imageUrl: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1000&q=80',
+    logoUrl: '/universities/gelisim.png'
   },
   {
     id: 'medipol',
@@ -253,7 +259,8 @@ export const UNIVERSITIES = [
     featured: true,
     badge: '#1 for Medicine & Dentistry',
     popularPrograms: ['Human Medicine (MD)', 'Dentistry (DDS)', 'Pharmacy (PharmD)', 'Biomedical Engineering', 'International Trade'],
-    imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80',
+    logoUrl: '/universities/medipol.png'
   },
   {
     id: 'bahcesehir',
@@ -278,7 +285,8 @@ export const UNIVERSITIES = [
     featured: true,
     badge: 'Top for Tech & Global Campus',
     popularPrograms: ['Software Engineering', 'Artificial Intelligence', 'Medicine', 'Digital Game Design', 'Economics'],
-    imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=80',
+    logoUrl: '/universities/bahcesehir.png'
   },
   {
     id: 'aydin',
@@ -303,7 +311,8 @@ export const UNIVERSITIES = [
     featured: true,
     badge: 'Highest International Enrollment',
     popularPrograms: ['Dentistry', 'Medicine', 'Software Engineering', 'Aviation Management', 'Architecture'],
-    imageUrl: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1000&q=80',
+    logoUrl: '/universities/aydin.png'
   },
   {
     id: 'istinye',
@@ -328,7 +337,8 @@ export const UNIVERSITIES = [
     featured: false,
     badge: 'Liv Hospital & Medical Park Clinical Base',
     popularPrograms: ['Medicine (Liv Hospital)', 'Dentistry', 'Software Engineering', 'Molecular Biology'],
-    imageUrl: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1000&q=80',
+    logoUrl: '/universities/istinye.png'
   },
   {
     id: 'altinbas',
@@ -353,7 +363,8 @@ export const UNIVERSITIES = [
     featured: false,
     badge: 'Premier International Campus',
     popularPrograms: ['Medicine', 'Dentistry', 'Pharmacy', 'Electrical Engineering', 'International Relations'],
-    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80',
+    logoUrl: '/universities/altinbas.png'
   }
 ];
 
@@ -492,15 +503,18 @@ export const WHY_FUTURE_LINK_JOURNEY = [
 ];
 
 // Contact details (Updated as specifically requested by user)
+export const BRAND_MOTTO = 'Your Future, Our Link';
+
 export const CONTACT_INFO = {
-  headline: 'Contact Us on :',
-  label: 'Contact Us on :',
+  motto: 'Your Future, Our Link',
+  headline: 'Contact to :',
+  label: 'Contact to :',
   contactPerson: 'Future Link Admissions Team',
   phone: '+90 537 058 96 32',
   phoneDisplay: '+90 537 058 96 32',
   whatsappNumber: '+90 537 058 96 32',
   whatsappRaw: '905370589632',
-  email: 'clemensclaude8@gmail.com',
+  email: 'futurelinkeducation40@gmail.com',
   officeLocation: 'Gardenia Plaza, Ataşehir Blv., Istanbul, Türkiye',
   whatsappSuggestedMessage: "Hello Future Link, I am interested in studying in Turkey. Please assist me with admissions and university options.",
   web3formsKey: '6ac3ba8a-ddf0-4100-91ad-3294ae894b8a'

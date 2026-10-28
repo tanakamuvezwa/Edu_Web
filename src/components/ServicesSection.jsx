@@ -69,7 +69,7 @@ export default function ServicesSection({ onOpenApplyModal }) {
               }`}
             >
               <FileText className="w-4 h-4" />
-              <span>5. Visa & Immigration</span>
+              <span>1. Visa & Immigration</span>
             </button>
             <button
               onClick={() => setActiveTab('student')}
@@ -80,7 +80,7 @@ export default function ServicesSection({ onOpenApplyModal }) {
               }`}
             >
               <Plane className="w-4 h-4" />
-              <span>6. Student Settlement Services</span>
+              <span>2. Student Settlement Services</span>
             </button>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function ServicesSection({ onOpenApplyModal }) {
             <div className="mb-6 flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
-                  Visa & Immigration
+                  1. Visa & Immigration
                 </span>
                 <h3 className="font-heading font-black text-2xl text-white mt-0.5">
                   From Admission to Arrival — We’re With You
@@ -136,7 +136,7 @@ export default function ServicesSection({ onOpenApplyModal }) {
             <div className="mb-6 flex items-center justify-between">
               <div>
                 <span className="text-xs font-bold text-sky-400 uppercase tracking-wider block">
-                  Student Services
+                  2. Student Settlement Services
                 </span>
                 <h3 className="font-heading font-black text-2xl text-white mt-0.5">
                   Everything You Need Before You Arrive
