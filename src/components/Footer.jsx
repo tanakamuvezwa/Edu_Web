@@ -133,7 +133,7 @@ export default function Footer({ onOpenApplyModal }) {
           {/* Column 4: Contact & Office */}
           <div>
             <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
-              Contact Us on :
+              Contact Us on
             </h4>
             <div className="space-y-3 text-slate-400 text-xs">
               <div className="text-amber-400 font-bold text-xs">
@@ -144,18 +144,14 @@ export default function Footer({ onOpenApplyModal }) {
                 <span>{CONTACT_INFO.officeLocation}</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-white transition">{CONTACT_INFO.phone}</a>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <MessageSquare className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a
                   href={`https://wa.me/${CONTACT_INFO.whatsappRaw}?text=${encodeURIComponent(CONTACT_INFO.whatsappSuggestedMessage)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-emerald-400 transition"
+                  className="inline-flex items-center gap-2 hover:text-emerald-400 transition"
                 >
-                  WhatsApp: {CONTACT_INFO.whatsappNumber}
+                  <WhatsAppIcon className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>WhatsApp</span>
                 </a>
               </div>
               <div className="flex items-center gap-2.5">

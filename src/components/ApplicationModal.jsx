@@ -211,7 +211,7 @@ export default function ApplicationModal({
                   Applicant: <strong>{formData.fullName}</strong>
                 </span>
                 <span className="text-[10px] text-emerald-400 block mt-1">
-                  Contact Us on : {CONTACT_INFO.phone}
+                  Contact Us on WhatsApp
                 </span>
               </div>
 

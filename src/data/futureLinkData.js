@@ -493,8 +493,8 @@ export const WHY_FUTURE_LINK_JOURNEY = [
 
 // Contact details (Updated as specifically requested by user)
 export const CONTACT_INFO = {
-  headline: 'Contact Us on :',
-  label: 'Contact Us on :',
+  headline: 'Contact Us on',
+  label: 'Contact Us on',
   contactPerson: 'Future Link Admissions Team',
   phone: '+90 537 058 96 32',
   phoneDisplay: '+90 537 058 96 32',

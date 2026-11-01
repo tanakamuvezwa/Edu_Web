@@ -50,12 +50,12 @@ export default function WhatsAppFloating() {
               className="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl transition shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 cursor-pointer"
             >
               <MessageSquare className="w-4 h-4 text-slate-950" />
-              <span>Contact Us on : {CONTACT_INFO.phone}</span>
+              <span>Contact Us on WhatsApp</span>
               <Send className="w-3.5 h-3.5 text-slate-950" />
             </a>
 
             <div className="text-[10px] text-slate-400 text-center">
-              Direct Mobile & WhatsApp: {CONTACT_INFO.whatsappNumber}
+              Direct WhatsApp chat with the admissions desk
             </div>
           </div>
         </div>

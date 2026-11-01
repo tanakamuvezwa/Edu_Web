@@ -1,0 +1,7 @@
+# Ignore assets and personal files that are not required for the app build.
+future-link-website-structure.pdf
+eng-photo.jpg
+tanaka-cover-letter.docx
+tanaka-cv.docx
+public/universities/beykoz-campus.jpg
+edu_web/

@@ -1,13 +1,10 @@
-﻿import React from 'react';
+import React from 'react';
 import { 
   Sparkles, 
   X, 
   MessageSquare, 
   ArrowRight, 
-  GraduationCap, 
-  PhoneCall, 
-  CheckCircle2, 
-  ShieldCheck 
+  CheckCircle2 
 } from 'lucide-react';
 import { CONTACT_INFO } from '../data/futureLinkData';
 import WhatsAppIcon from './WhatsAppIcon';
@@ -115,10 +112,16 @@ export default function WelcomePromptModal({ isOpen, onClose, onStartRegistratio
 
           {/* Contact Details Footnote */}
           <div className="pt-2 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2">
-            <div>
-              <span className="text-slate-400">Contact to: </span>
-              <a href={`tel:${CONTACT_INFO.phone}`} className="text-amber-400 font-bold hover:underline">
-                {CONTACT_INFO.phone}
+            <div className="flex items-center gap-2">
+              <span className="text-slate-400">Contact us on</span>
+              <a
+                href={directWhatsAppUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition shadow-md"
+                aria-label="Chat on WhatsApp"
+              >
+                <WhatsAppIcon className="w-4 h-4 text-slate-950" />
               </a>
             </div>
 

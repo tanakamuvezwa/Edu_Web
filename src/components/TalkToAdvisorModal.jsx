@@ -98,7 +98,7 @@ export default function TalkToAdvisorModal({ isOpen, onClose, onShowToast }) {
               className="mt-3 w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20"
             >
               <MessageSquare className="w-4 h-4 text-slate-950" />
-              <span>Contact Us on WhatsApp ({CONTACT_INFO.phone})</span>
+              <span>Contact Us on WhatsApp</span>
               <ArrowRight className="w-4 h-4 text-slate-950" />
             </a>
           </div>

@@ -5,6 +5,14 @@
     --font-heading: 'Outfit', sans-serif;
     --font-sans: 'Plus Jakarta Sans', sans-serif;
     --font-mono: 'Space Grotesk', monospace;
+    --page-bg: #020817;
+    --page-bg-alt: #0f172a;
+    --panel: rgba(15, 23, 42, 0.75);
+    --panel-strong: rgba(15, 23, 42, 0.9);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-subtle: rgba(148, 163, 184, 0.18);
   }
 
   html {
@@ -13,9 +21,23 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #070d18;
-    color: #f1f5f9;
+    background-color: var(--page-bg);
+    color: var(--text-primary);
     overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  body[data-theme='light'] {
+    --page-bg: #f8fafc;
+    --page-bg-alt: #e2e8f0;
+    --panel: rgba(255, 255, 255, 0.72);
+    --panel-strong: rgba(255, 255, 255, 0.9);
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #475569;
+    --border-subtle: rgba(15, 23, 42, 0.1);
+    background: #f8fafc;
+    color: #0f172a;
   }
 
   h1, h2, h3, h4, .font-heading {
@@ -26,6 +48,96 @@
   .font-mono-num {
     font-family: var(--font-mono);
   }
+}
+
+.theme-dark {
+  background: #020817;
+  color: #f8fafc;
+}
+
+.theme-light {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef6ff 100%);
+  color: #0f172a;
+}
+
+.theme-light .glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+.theme-light .bg-slate-950,
+.theme-light .bg-slate-900,
+.theme-light .bg-slate-800,
+.theme-light .bg-slate-700,
+.theme-light .bg-slate-600 {
+  background-color: #f8fafc !important;
+}
+
+.theme-light .bg-grid {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+}
+
+.theme-light .text-white,
+.theme-light .text-slate-100,
+.theme-light .text-slate-200,
+.theme-light .text-slate-300,
+.theme-light .text-slate-400,
+.theme-light .text-slate-500,
+.theme-light .text-slate-600,
+.theme-light .text-slate-700 {
+  color: #0f172a !important;
+}
+
+.theme-light .text-slate-300,
+.theme-light .text-slate-400,
+.theme-light .text-slate-500,
+.theme-light .text-slate-600,
+.theme-light .text-slate-700 {
+  color: #334155 !important;
+}
+
+.theme-light .text-slate-900 {
+  color: #0f172a !important;
+}
+
+.theme-light .border-white\/10,
+.theme-light .border-white\/5,
+.theme-light .border-white\/15,
+.theme-light .border-white\/20,
+.theme-light .border-white\/30,
+.theme-light .border-white\/40 {
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+.theme-light .bg-white\/5,
+.theme-light .bg-white\/10,
+.theme-light .bg-white\/15,
+.theme-light .bg-white\/20 {
+  background-color: rgba(15, 23, 42, 0.03) !important;
+}
+
+.theme-light .shadow-amber-500\/20,
+.theme-light .shadow-amber-500\/25,
+.theme-light .shadow-amber-400\/15 {
+  box-shadow: 0 18px 40px -22px rgba(245, 158, 11, 0.45) !important;
+}
+
+.theme-light .bg-gradient-to-r.from-slate-950,
+.theme-light .bg-gradient-to-r.from-slate-900,
+.theme-light .bg-gradient-to-r.from-slate-800 {
+  background-image: linear-gradient(90deg, rgba(248, 250, 252, 0.96), rgba(224, 242, 254, 0.88), rgba(248, 250, 252, 0.96)) !important;
+}
+
+body[data-theme='light'] ::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+body[data-theme='light'] ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+body[data-theme='light'] ::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
 }
 
 /* Futuristic Glass Card */

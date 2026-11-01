@@ -5,12 +5,15 @@ import {
   X, 
   PhoneCall, 
   ArrowRight,
-  MessageSquare
+  MoonStar,
+  SunMedium
 } from 'lucide-react';
 import { CONTACT_INFO } from '../data/futureLinkData';
 import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Navbar({ 
+  theme,
+  onToggleTheme,
   onOpenApplyModal, 
   onOpenAdvisorModal 
 }) {
@@ -94,6 +97,15 @@ export default function Navbar({
 
           {/* Controls & Actions */}
           <div className="hidden md:flex items-center gap-3">
+            <button
+              type="button"
+              onClick={onToggleTheme}
+              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-xs font-bold text-slate-200 transition hover:border-amber-400/40 hover:text-amber-300"
+              aria-label="Toggle color mode"
+            >
+              {theme === 'dark' ? <SunMedium className="h-4 w-4 text-amber-400" /> : <MoonStar className="h-4 w-4 text-sky-500" />}
+              <span>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
+            </button>
             
             {/* Talk to an Advisor Secondary Button */}
             <button
