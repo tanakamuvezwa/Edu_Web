@@ -41,16 +41,16 @@
   }
 
   body[data-theme='cream'] {
-    --page-bg: #fffaf4;
-    --page-bg-alt: #f4ead8;
+    --page-bg: #fffaf5;
+    --page-bg-alt: #f5e9d8;
     --panel: rgba(255, 255, 255, 0.82);
-    --panel-strong: rgba(255, 250, 244, 0.96);
-    --text-primary: #1f2937;
-    --text-secondary: #4b5563;
-    --text-muted: #6b7280;
+    --panel-strong: rgba(255, 250, 246, 0.96);
+    --text-primary: #2b2a29;
+    --text-secondary: #504a43;
+    --text-muted: #72685d;
     --border-subtle: rgba(120, 113, 108, 0.12);
-    background: linear-gradient(180deg, #fffaf4 0%, #f9f0e7 100%);
-    color: #1f2937;
+    background: linear-gradient(180deg, #fffaf5 0%, #f5efe7 100%);
+    color: #2b2a29;
   }
 
   h1, h2, h3, h4, .font-heading {
@@ -69,19 +69,20 @@
 }
 
 .theme-light {
-  background: linear-gradient(180deg, #f8fafc 0%, #eef6ff 100%);
+  background: linear-gradient(180deg, #f8fafc 0%, #edf4ff 100%);
   color: #0f172a;
 }
 
 .theme-cream {
-  background: linear-gradient(180deg, #fffaf4 0%, #f7eedf 100%);
-  color: #1f2937;
+  background: linear-gradient(180deg, #fffaf5 0%, #f4eadb 100%);
+  color: #2b2a29;
 }
 
 .theme-light .glass-panel,
 .theme-cream .glass-panel {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.76);
   border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 40px -24px rgba(15, 23, 42, 0.18);
 }
 
 .theme-light .bg-slate-950,
@@ -94,7 +95,7 @@
 .theme-cream .bg-slate-800,
 .theme-cream .bg-slate-700,
 .theme-cream .bg-slate-600 {
-  background-color: #f8fafc !important;
+  background-color: rgba(255, 255, 255, 0.82) !important;
 }
 
 .theme-light .bg-grid,
@@ -118,7 +119,7 @@
 .theme-cream .text-slate-500,
 .theme-cream .text-slate-600,
 .theme-cream .text-slate-700 {
-  color: #0f172a !important;
+  color: #1f2937 !important;
 }
 
 .theme-light .text-slate-300,
@@ -131,12 +132,12 @@
 .theme-cream .text-slate-500,
 .theme-cream .text-slate-600,
 .theme-cream .text-slate-700 {
-  color: #334155 !important;
+  color: #475569 !important;
 }
 
 .theme-light .text-slate-900,
 .theme-cream .text-slate-900 {
-  color: #0f172a !important;
+  color: #111827 !important;
 }
 
 .theme-light .border-white\/10,
@@ -162,19 +163,25 @@
 .theme-cream .bg-white\/10,
 .theme-cream .bg-white\/15,
 .theme-cream .bg-white\/20 {
-  background-color: rgba(15, 23, 42, 0.03) !important;
+  background-color: rgba(15, 23, 42, 0.02) !important;
 }
 
 .theme-light .shadow-amber-500\/20,
 .theme-light .shadow-amber-500\/25,
-.theme-light .shadow-amber-400\/15 {
+.theme-light .shadow-amber-400\/15,
+.theme-cream .shadow-amber-500\/20,
+.theme-cream .shadow-amber-500\/25,
+.theme-cream .shadow-amber-400\/15 {
   box-shadow: 0 18px 40px -22px rgba(245, 158, 11, 0.45) !important;
 }
 
 .theme-light .bg-gradient-to-r.from-slate-950,
 .theme-light .bg-gradient-to-r.from-slate-900,
-.theme-light .bg-gradient-to-r.from-slate-800 {
-  background-image: linear-gradient(90deg, rgba(248, 250, 252, 0.96), rgba(224, 242, 254, 0.88), rgba(248, 250, 252, 0.96)) !important;
+.theme-light .bg-gradient-to-r.from-slate-800,
+.theme-cream .bg-gradient-to-r.from-slate-950,
+.theme-cream .bg-gradient-to-r.from-slate-900,
+.theme-cream .bg-gradient-to-r.from-slate-800 {
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(253, 230, 138, 0.25), rgba(255, 255, 255, 0.9)) !important;
 }
 
 body[data-theme='light'] ::-webkit-scrollbar-track {

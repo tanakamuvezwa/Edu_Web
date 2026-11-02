@@ -19,9 +19,9 @@ export default function Navbar({
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const themeOptions = [
-    { value: 'dark', label: 'Dark' },
-    { value: 'light', label: 'White' },
-    { value: 'cream', label: 'Cream' }
+    { value: 'dark', label: 'Dark', swatch: 'bg-slate-900', ring: 'ring-slate-300' },
+    { value: 'light', label: 'White', swatch: 'bg-white', ring: 'ring-slate-300' },
+    { value: 'cream', label: 'Cream', swatch: 'bg-[#f7ead7]', ring: 'ring-amber-300' }
   ];
 
   // Exact navigation (Without "How It Works" as requested)
@@ -102,7 +102,7 @@ export default function Navbar({
 
           {/* Controls & Actions */}
           <div className="hidden md:flex items-center gap-3">
-            <div className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/5 p-1">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2 py-1.5 shadow-sm">
               {themeOptions.map((option) => {
                 const isActive = theme === option.value;
                 return (
@@ -110,14 +110,13 @@ export default function Navbar({
                     key={option.value}
                     type="button"
                     onClick={() => onSelectTheme(option.value)}
-                    className={`px-3 py-1.5 rounded-lg text-[11px] font-bold transition ${
-                      isActive
-                        ? 'bg-amber-400 text-slate-950 shadow-sm'
-                        : 'text-slate-300 hover:text-white hover:bg-white/5'
-                    }`}
+                    className={`relative flex items-center justify-center h-7 w-7 rounded-full border transition-all ${
+                      isActive ? `ring-2 ${option.ring} shadow-md` : 'border-white/10 hover:border-white/30'
+                    } ${option.swatch}`}
                     aria-label={`Set ${option.label} theme`}
+                    title={option.label}
                   >
-                    {option.label}
+                    {isActive && <span className="h-2.5 w-2.5 rounded-full bg-amber-400 shadow-sm" />}
                   </button>
                 );
               })}
