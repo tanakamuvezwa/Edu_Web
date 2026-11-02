@@ -85,54 +85,14 @@
   box-shadow: 0 18px 40px -24px rgba(15, 23, 42, 0.18);
 }
 
-.theme-light .bg-slate-950,
-.theme-light .bg-slate-900,
-.theme-light .bg-slate-800,
-.theme-light .bg-slate-700,
-.theme-light .bg-slate-600,
-.theme-cream .bg-slate-950,
-.theme-cream .bg-slate-900,
-.theme-cream .bg-slate-800,
-.theme-cream .bg-slate-700,
-.theme-cream .bg-slate-600 {
-  background-color: rgba(255, 255, 255, 0.82) !important;
-}
-
 .theme-light .bg-grid,
 .theme-cream .bg-grid {
   background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
 }
 
-.theme-light .text-white,
-.theme-light .text-slate-100,
-.theme-light .text-slate-200,
-.theme-light .text-slate-300,
-.theme-light .text-slate-400,
-.theme-light .text-slate-500,
-.theme-light .text-slate-600,
-.theme-light .text-slate-700,
-.theme-cream .text-white,
-.theme-cream .text-slate-100,
-.theme-cream .text-slate-200,
-.theme-cream .text-slate-300,
-.theme-cream .text-slate-400,
-.theme-cream .text-slate-500,
-.theme-cream .text-slate-600,
-.theme-cream .text-slate-700 {
-  color: #1f2937 !important;
-}
-
-.theme-light .text-slate-300,
-.theme-light .text-slate-400,
-.theme-light .text-slate-500,
-.theme-light .text-slate-600,
-.theme-light .text-slate-700,
-.theme-cream .text-slate-300,
-.theme-cream .text-slate-400,
-.theme-cream .text-slate-500,
-.theme-cream .text-slate-600,
-.theme-cream .text-slate-700 {
-  color: #475569 !important;
+.theme-light .university-card-title,
+.theme-cream .university-card-title {
+  color: #ffffff !important;
 }
 
 .theme-light .text-slate-900,

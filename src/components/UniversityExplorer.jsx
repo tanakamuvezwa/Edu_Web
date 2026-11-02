@@ -182,7 +182,7 @@ export default function UniversityExplorer({
                         <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
                         <span>{uni.city}, Türkiye</span>
                       </span>
-                      <h3 className="font-heading font-black text-xl text-white mt-0.5 leading-snug">
+                      <h3 className="university-card-title font-heading font-black text-xl text-white mt-0.5 leading-snug">
                         {uni.name}
                       </h3>
                     </div>

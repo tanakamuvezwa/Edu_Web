@@ -75,7 +75,6 @@ export default function App() {
       {/* 1. Futuristic Navbar with Logo & Exact Nav Links */}
       <Navbar
         theme={theme}
-        onSelectTheme={setTheme}
         onOpenApplyModal={() => handleOpenApplyModal()}
         onOpenAdvisorModal={() => setAdvisorModalOpen(true)}
       />
@@ -119,6 +118,8 @@ export default function App() {
 
       {/* Footer */}
       <Footer
+        theme={theme}
+        onSelectTheme={setTheme}
         onOpenApplyModal={() => handleOpenApplyModal()}
       />
 

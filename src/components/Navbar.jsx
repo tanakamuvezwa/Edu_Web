@@ -13,17 +13,10 @@ import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Navbar({ 
   theme,
-  onSelectTheme,
   onOpenApplyModal, 
   onOpenAdvisorModal 
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [themeMenuOpen, setThemeMenuOpen] = useState(false);
-  const themeOptions = [
-    { value: 'dark', label: 'Dark', swatch: 'bg-slate-900', accent: 'bg-slate-900' },
-    { value: 'light', label: 'White', swatch: 'bg-white', accent: 'bg-slate-100' },
-    { value: 'cream', label: 'Cream', swatch: 'bg-[#f7ead7]', accent: 'bg-[#f4d9a7]' }
-  ];
 
   // Exact navigation (Without "How It Works" as requested)
   const navLinks = [
@@ -103,45 +96,6 @@ export default function Navbar({
 
           {/* Controls & Actions */}
           <div className="hidden md:flex items-center gap-3">
-            <div className="relative">
-              <button
-                type="button"
-                onClick={() => setThemeMenuOpen((prev) => !prev)}
-                className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-2 text-slate-200 hover:text-white hover:bg-white/10 transition shadow-sm"
-                aria-label="Select color theme"
-              >
-                <Palette className="w-4 h-4 text-amber-400" />
-                <ChevronDown className={`w-3.5 h-3.5 text-slate-300 transition ${themeMenuOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              {themeMenuOpen && (
-                <div className="absolute right-0 top-full mt-2 w-44 rounded-2xl border border-white/10 bg-slate-950/95 p-2 shadow-2xl shadow-slate-950/50 backdrop-blur-xl">
-                  {themeOptions.map((option) => {
-                    const isActive = theme === option.value;
-                    return (
-                      <button
-                        key={option.value}
-                        type="button"
-                        onClick={() => {
-                          onSelectTheme(option.value);
-                          setThemeMenuOpen(false);
-                        }}
-                        className={`w-full flex items-center justify-between gap-3 rounded-xl px-2.5 py-2 text-left text-xs font-semibold transition ${
-                          isActive ? 'bg-white/8 text-white' : 'text-slate-300 hover:bg-white/5 hover:text-white'
-                        }`}
-                      >
-                        <span className="flex items-center gap-2.5">
-                          <span className={`h-4 w-4 rounded-full border border-white/20 ${option.swatch}`} />
-                          {option.label}
-                        </span>
-                        {isActive && <span className="h-2 w-2 rounded-full bg-amber-400" />}
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-            
             {/* Talk to an Advisor Secondary Button */}
             <button
               onClick={onOpenAdvisorModal}
