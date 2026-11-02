@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React from 'react';
 import { 
   GraduationCap, 
   MapPin, 
@@ -8,21 +8,12 @@ import {
   ShieldCheck, 
   Sparkles, 
   ArrowUp,
-  ArrowRight,
-  Palette,
-  ChevronDown
+  ArrowRight
 } from 'lucide-react';
 import { CONTACT_INFO } from '../data/futureLinkData';
 import WhatsAppIcon from './WhatsAppIcon';
 
-export default function Footer({ theme, onSelectTheme, onOpenApplyModal }) {
-  const [themeMenuOpen, setThemeMenuOpen] = useState(false);
-  const themeOptions = [
-    { value: 'dark', label: 'Dark', swatch: 'bg-slate-900' },
-    { value: 'light', label: 'White', swatch: 'bg-white' },
-    { value: 'cream', label: 'Cream', swatch: 'bg-[#f7ead7]' }
-  ];
-
+export default function Footer({ onOpenApplyModal }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -168,53 +159,6 @@ export default function Footer({ theme, onSelectTheme, onOpenApplyModal }) {
                 <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-white transition">{CONTACT_INFO.email}</a>
               </div>
 
-              <div className="pt-2 border-t border-white/10 mt-2">
-                <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-300 mb-2">
-                  <Palette className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Theme</span>
-                </div>
-
-                <div className="relative">
-                  <button
-                    type="button"
-                    onClick={() => setThemeMenuOpen((open) => !open)}
-                    className="w-full flex items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/5 px-2.5 py-2 text-left text-[11px] font-semibold text-slate-200 hover:bg-white/10 transition"
-                  >
-                    <span className="flex items-center gap-2">
-                      <span className={`h-3.5 w-3.5 rounded-full border border-white/20 ${themeOptions.find(option => option.value === theme)?.swatch || 'bg-slate-900'}`} />
-                      {themeOptions.find(option => option.value === theme)?.label || 'Dark'}
-                    </span>
-                    <ChevronDown className={`w-3.5 h-3.5 text-slate-400 transition ${themeMenuOpen ? 'rotate-180' : ''}`} />
-                  </button>
-
-                  {themeMenuOpen && (
-                    <div className="absolute bottom-full left-0 right-0 mb-2 rounded-xl border border-white/10 bg-slate-950/95 p-2 shadow-2xl shadow-slate-950/50 backdrop-blur-xl">
-                      {themeOptions.map((option) => {
-                        const isActive = theme === option.value;
-                        return (
-                          <button
-                            key={option.value}
-                            type="button"
-                            onClick={() => {
-                              onSelectTheme(option.value);
-                              setThemeMenuOpen(false);
-                            }}
-                            className={`w-full flex items-center justify-between gap-2 rounded-lg px-2.5 py-2 text-left text-[11px] font-semibold transition ${
-                              isActive ? 'bg-white/10 text-white' : 'text-slate-300 hover:bg-white/5 hover:text-white'
-                            }`}
-                          >
-                            <span className="flex items-center gap-2">
-                              <span className={`h-3.5 w-3.5 rounded-full border border-white/20 ${option.swatch}`} />
-                              {option.label}
-                            </span>
-                            {isActive && <span className="h-2 w-2 rounded-full bg-amber-400" />}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              </div>
             </div>
           </div>
 

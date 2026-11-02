@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import StudyInTurkey from './components/StudyInTurkey';
@@ -14,20 +14,7 @@ import TalkToAdvisorModal from './components/TalkToAdvisorModal';
 import WhatsAppFloating from './components/WhatsAppFloating';
 import Toast from './components/Toast';
 
-const THEME_KEY = 'future-link-theme';
-const THEME_OPTIONS = ['dark', 'light', 'cream'];
-
-const getInitialTheme = () => {
-  const savedTheme = localStorage.getItem(THEME_KEY);
-  if (THEME_OPTIONS.includes(savedTheme)) {
-    return savedTheme;
-  }
-
-  return 'dark';
-};
-
 export default function App() {
-  const [theme, setTheme] = useState(getInitialTheme);
   const [welcomeModalOpen, setWelcomeModalOpen] = useState(true);
   const [applyModalOpen, setApplyModalOpen] = useState(false);
   const [advisorModalOpen, setAdvisorModalOpen] = useState(false);
@@ -36,11 +23,6 @@ export default function App() {
   const [preselectedProgram, setPreselectedProgram] = useState('');
   const [searchFilter, setSearchFilter] = useState(null);
   const [toast, setToast] = useState(null);
-
-  useEffect(() => {
-    document.body.setAttribute('data-theme', theme);
-    localStorage.setItem(THEME_KEY, theme);
-  }, [theme]);
 
   const showToast = (toastObj) => {
     setToast(toastObj);
@@ -70,11 +52,10 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col selection:bg-amber-400 selection:text-slate-950 ${theme === 'light' ? 'theme-light' : theme === 'cream' ? 'theme-cream' : 'theme-dark'}`}>
+    <div className="min-h-screen flex flex-col selection:bg-amber-400 selection:text-slate-950 theme-dark">
       
       {/* 1. Futuristic Navbar with Logo & Exact Nav Links */}
       <Navbar
-        theme={theme}
         onOpenApplyModal={() => handleOpenApplyModal()}
         onOpenAdvisorModal={() => setAdvisorModalOpen(true)}
       />
@@ -118,8 +99,6 @@ export default function App() {
 
       {/* Footer */}
       <Footer
-        theme={theme}
-        onSelectTheme={setTheme}
         onOpenApplyModal={() => handleOpenApplyModal()}
       />
 

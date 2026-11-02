@@ -1,18 +1,15 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   Sparkles, 
   Menu, 
   X, 
   PhoneCall, 
-  ArrowRight,
-  Palette,
-  ChevronDown
+  ArrowRight
 } from 'lucide-react';
 import { CONTACT_INFO } from '../data/futureLinkData';
 import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Navbar({ 
-  theme,
   onOpenApplyModal, 
   onOpenAdvisorModal 
 }) {
