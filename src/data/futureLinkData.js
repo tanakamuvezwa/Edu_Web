@@ -178,7 +178,7 @@ export const UNIVERSITIES = [
     featured: true,
     badge: 'Premier Aviation & Logistics Hub',
     popularPrograms: ['Civil Aviation Management', 'Software Engineering (English)', 'Computer Engineering', 'International Logistics & Transport', 'Digital Game Design', 'Interior Architecture'],
-    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: '/universities/beykoz.png'
   },
   {
     id: 'dogus',
@@ -328,7 +328,7 @@ export const UNIVERSITIES = [
     featured: false,
     badge: 'Liv Hospital & Medical Park Clinical Base',
     popularPrograms: ['Medicine (Liv Hospital)', 'Dentistry', 'Software Engineering', 'Molecular Biology'],
-    imageUrl: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: '/universities/istinye.png'
   },
   {
     id: 'altinbas',
