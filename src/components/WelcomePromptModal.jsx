@@ -113,7 +113,7 @@ export default function WelcomePromptModal({ isOpen, onClose, onStartRegistratio
           {/* Contact Details Footnote */}
           <div className="pt-2 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2">
             <div className="flex items-center gap-2">
-              <span className="text-slate-400">Contact us on</span>
+              <span className="text-slate-400">Contact on WhatsApp</span>
               <a
                 href={directWhatsAppUrl}
                 target="_blank"

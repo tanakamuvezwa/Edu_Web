@@ -178,7 +178,7 @@ export const UNIVERSITIES = [
     featured: true,
     badge: 'Premier Aviation & Logistics Hub',
     popularPrograms: ['Civil Aviation Management', 'Software Engineering (English)', 'Computer Engineering', 'International Logistics & Transport', 'Digital Game Design', 'Interior Architecture'],
-    imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80'
   },
   {
     id: 'dogus',
@@ -253,7 +253,7 @@ export const UNIVERSITIES = [
     featured: true,
     badge: '#1 for Medicine & Dentistry',
     popularPrograms: ['Human Medicine (MD)', 'Dentistry (DDS)', 'Pharmacy (PharmD)', 'Biomedical Engineering', 'International Trade'],
-    imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80'
+    imageUrl: '/universities/medipol.png'
   },
   {
     id: 'bahcesehir',
@@ -493,8 +493,8 @@ export const WHY_FUTURE_LINK_JOURNEY = [
 
 // Contact details (Updated as specifically requested by user)
 export const CONTACT_INFO = {
-  headline: 'Contact Us on',
-  label: 'Contact Us on',
+  headline: 'Contact on WhatsApp',
+  label: 'Contact on WhatsApp',
   contactPerson: 'Future Link Admissions Team',
   phone: '+90 537 058 96 32',
   phoneDisplay: '+90 537 058 96 32',

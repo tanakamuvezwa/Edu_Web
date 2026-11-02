@@ -143,7 +143,7 @@ export default function ContactSection({ onShowToast }) {
                   <WhatsAppIcon className="w-4 h-4" />
                 </div>
                 <div className="flex-1">
-                  <span className="text-[10px] text-emerald-400 font-bold uppercase block">Contact us on</span>
+                  <span className="text-[10px] text-emerald-400 font-bold uppercase block">Contact on WhatsApp</span>
                   <div className="flex items-center justify-between flex-wrap gap-2 mt-0.5">
                     <a
                       href={whatsappDirectUrl}
@@ -155,7 +155,7 @@ export default function ContactSection({ onShowToast }) {
                       <span>WhatsApp</span>
                     </a>
                   </div>
-                  <span className="text-[10px] text-slate-400 block mt-1">Fast response on the official admissions number</span>
+                  <span className="text-[10px] text-slate-400 block mt-1">Fast response from the official admissions desk</span>
                 </div>
               </div>
 

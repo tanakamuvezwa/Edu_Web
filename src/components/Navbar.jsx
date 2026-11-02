@@ -13,11 +13,16 @@ import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Navbar({ 
   theme,
-  onToggleTheme,
+  onSelectTheme,
   onOpenApplyModal, 
   onOpenAdvisorModal 
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const themeOptions = [
+    { value: 'dark', label: 'Dark' },
+    { value: 'light', label: 'White' },
+    { value: 'cream', label: 'Cream' }
+  ];
 
   // Exact navigation (Without "How It Works" as requested)
   const navLinks = [
@@ -45,8 +50,8 @@ export default function Navbar({
 
           <div className="flex items-center gap-4 text-slate-300 text-[11px]">
             <span className="flex items-center gap-1.5 text-[11px] font-semibold">
-              <span className="text-slate-300">Contact to:</span>
-              <a href={whatsappDirectUrl} target="_blank" rel="noreferrer" className="p-1 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition hover:scale-110 shadow inline-flex items-center justify-center cursor-pointer"><WhatsAppIcon className="w-3.5 h-3.5 text-slate-950" /></a>
+              <span className="text-slate-300">Contact on WhatsApp</span>
+              <a href={whatsappDirectUrl} target="_blank" rel="noreferrer" className="p-1 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition hover:scale-110 shadow inline-flex items-center justify-center cursor-pointer" aria-label="Contact on WhatsApp"><WhatsAppIcon className="w-3.5 h-3.5 text-slate-950" /></a>
             </span>
           </div>
         </div>
@@ -97,15 +102,26 @@ export default function Navbar({
 
           {/* Controls & Actions */}
           <div className="hidden md:flex items-center gap-3">
-            <button
-              type="button"
-              onClick={onToggleTheme}
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-xs font-bold text-slate-200 transition hover:border-amber-400/40 hover:text-amber-300"
-              aria-label="Toggle color mode"
-            >
-              {theme === 'dark' ? <SunMedium className="h-4 w-4 text-amber-400" /> : <MoonStar className="h-4 w-4 text-sky-500" />}
-              <span>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
-            </button>
+            <div className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/5 p-1">
+              {themeOptions.map((option) => {
+                const isActive = theme === option.value;
+                return (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => onSelectTheme(option.value)}
+                    className={`px-3 py-1.5 rounded-lg text-[11px] font-bold transition ${
+                      isActive
+                        ? 'bg-amber-400 text-slate-950 shadow-sm'
+                        : 'text-slate-300 hover:text-white hover:bg-white/5'
+                    }`}
+                    aria-label={`Set ${option.label} theme`}
+                  >
+                    {option.label}
+                  </button>
+                );
+              })}
+            </div>
             
             {/* Talk to an Advisor Secondary Button */}
             <button

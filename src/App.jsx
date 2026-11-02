@@ -15,10 +15,11 @@ import WhatsAppFloating from './components/WhatsAppFloating';
 import Toast from './components/Toast';
 
 const THEME_KEY = 'future-link-theme';
+const THEME_OPTIONS = ['dark', 'light', 'cream'];
 
 const getInitialTheme = () => {
   const savedTheme = localStorage.getItem(THEME_KEY);
-  if (savedTheme === 'light' || savedTheme === 'dark') {
+  if (THEME_OPTIONS.includes(savedTheme)) {
     return savedTheme;
   }
 
@@ -69,12 +70,12 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col selection:bg-amber-400 selection:text-slate-950 ${theme === 'light' ? 'theme-light' : 'theme-dark'}`}>
+    <div className={`min-h-screen flex flex-col selection:bg-amber-400 selection:text-slate-950 ${theme === 'light' ? 'theme-light' : theme === 'cream' ? 'theme-cream' : 'theme-dark'}`}>
       
       {/* 1. Futuristic Navbar with Logo & Exact Nav Links */}
       <Navbar
         theme={theme}
-        onToggleTheme={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
+        onSelectTheme={setTheme}
         onOpenApplyModal={() => handleOpenApplyModal()}
         onOpenAdvisorModal={() => setAdvisorModalOpen(true)}
       />

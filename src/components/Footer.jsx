@@ -133,7 +133,7 @@ export default function Footer({ onOpenApplyModal }) {
           {/* Column 4: Contact & Office */}
           <div>
             <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-4">
-              Contact Us on
+              Contact on WhatsApp
             </h4>
             <div className="space-y-3 text-slate-400 text-xs">
               <div className="text-amber-400 font-bold text-xs">
